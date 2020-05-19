@@ -4,4 +4,24 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>Principale</servlet-name>
+  	<display-name>Principale</display-name>
+  	<description></description>
+  	<servlet-class>tn.essatin.controller.Principale</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AfficheNationalite</servlet-name>
+  	<display-name>AfficheNationalite</display-name>
+  	<description></description>
+  	<servlet-class>tn.essatin.controller.AfficheNationalite</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Principale</servlet-name>
+  	<url-pattern>/Principale</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AfficheNationalite</servlet-name>
+  	<url-pattern>/AfficheNationalite</url-pattern>
+  </servlet-mapping>
 </web-app>
