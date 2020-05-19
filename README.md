@@ -20,3 +20,4 @@ $ cd ../ESSAT-TimeTableManagementSystem
 $ mvn install
 ```
 Run in Browser
+http://localhost:8080/ESSAT-TimeTableManagementSystem/Principale
