@@ -30,6 +30,13 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+             <div class="row">
+                <div class="col-lg-12">
+                   <ol class="breadcrumb">
+                   <li><a href="ajouterEnseignant.jsp"><i class="fa fa-plus"></i>Ajouter</a></li>
+                   </ol>
+                        </div>
+                        </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
@@ -43,11 +50,27 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
+                                            <th>Nom</th>
+                                            <th>Prenom</th>
+                                            <th>Email</th>
+                                            <th>Adresse</th>
+                                            <th>Tel</th>
+                                            <th data-visible="false">Date de Naissance</th>
+                                            <th data-visible="false">Lieu de Naissance</th>
+                                            <th data-visible="false">Type Identificateur</th>
+                                            <th data-visible="false">Identificateur</th>
+                                            <th>Sexe</th>
+                                            <th>Nationalite</th>
+                                            <th>CNSS</th>
+                                            <th>CNRPS</th>
+                                            <th data-visible="false">Observation</th>
+                                            <th data-visible="false">Situation</th>
+                                            <th>Nombre Enfants</th>
+                                            <th data-visible="false">Diplome</th>
+                                            <th>RIB IBAN</th>
+                                            <th>Image</th>
+                                            <th>Poste</th>
+                                            <th data-visible="false">Etablissement Origine</th>
                                         </tr>
                                     </thead>
                                     <tbody>

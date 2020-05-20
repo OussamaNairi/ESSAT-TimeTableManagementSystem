@@ -8,8 +8,8 @@ public class Etudiant extends Personne{
 		// TODO Auto-generated constructor stub
 	}
 	public Etudiant(int idPersonne, String nom, String prenom, String mail, String adresse, String tel,
-			String dateDeNaissance, Identificateur identificateur, String sexe, Nationalite nationalite) {
-		super(idPersonne, nom, prenom, mail, adresse, tel, dateDeNaissance, identificateur, sexe, nationalite);
+			String dateDeNaissance,String lieuDeNaissance, Identificateur identificateur,String numeroIdentificateur, String sexe, Nationalite nationalite) {
+		super(idPersonne, nom, prenom, mail, adresse, tel, dateDeNaissance,lieuDeNaissance, identificateur,numeroIdentificateur, sexe, nationalite);
 		// TODO Auto-generated constructor stub
 	}
 	public Etudiant(int id, Personne personne) {

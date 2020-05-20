@@ -1,6 +1,6 @@
 package tn.essatin.model;
 
-public abstract class Personne {
+public class Personne {
 	private int idPersonne;
 	private String nom;
 	private String prenom;
@@ -8,7 +8,9 @@ public abstract class Personne {
 	private String adresse;
 	private String tel;
 	private String dateDeNaissance;
+	private String lieuDeNaissance;
 	private Identificateur identificateur;
+	private String numeroIdentificateur;
 	private String sexe;
 	private Nationalite nationalite;
 	public Personne() {
@@ -16,7 +18,7 @@ public abstract class Personne {
 		// TODO Auto-generated constructor stub
 	}
 	public Personne(int idPersonne, String nom, String prenom, String mail, String adresse, String tel,
-			String dateDeNaissance, Identificateur identificateur, String sexe, Nationalite nationalite) {
+			String dateDeNaissance,String lieuDeNaissance, Identificateur identificateur,String numeroIdentificateur, String sexe, Nationalite nationalite) {
 		super();
 		this.idPersonne = idPersonne;
 		this.nom = nom;
@@ -25,7 +27,9 @@ public abstract class Personne {
 		this.adresse = adresse;
 		this.tel = tel;
 		this.dateDeNaissance = dateDeNaissance;
+		this.lieuDeNaissance = lieuDeNaissance;
 		this.identificateur = identificateur;
+		this.numeroIdentificateur = numeroIdentificateur;
 		this.sexe = sexe;
 		this.nationalite = nationalite;
 	}
@@ -88,6 +92,18 @@ public abstract class Personne {
 	}
 	public void setNationalite(Nationalite nationalite) {
 		this.nationalite = nationalite;
+	}
+	public String getNumeroIdentificateur() {
+		return numeroIdentificateur;
+	}
+	public void setNumeroIdentificateur(String numeroIdentificateur) {
+		this.numeroIdentificateur = numeroIdentificateur;
+	}
+	public String getLieuDeNaissance() {
+		return lieuDeNaissance;
+	}
+	public void setLieuDeNaissance(String lieuDeNaissance) {
+		this.lieuDeNaissance = lieuDeNaissance;
 	}
 	
 

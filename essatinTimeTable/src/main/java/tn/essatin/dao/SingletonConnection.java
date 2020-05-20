@@ -17,13 +17,8 @@ public class SingletonConnection {
 		}
     }
     	public static Connection getConnection() {
-    		try {
-				if (connection != null  && connection.isValid(800))
-				return connection;
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+    		
+    		
     		return connection;
     	}
 

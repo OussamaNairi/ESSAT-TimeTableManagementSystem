@@ -1,3 +1,4 @@
+
 <%@page import="tn.essatin.dao.INationaliteDao"%>
 <%@page import="tn.essatin.dao.NationaliteDaoImp"%>
 <%@page import="tn.essatin.model.Nationalite"%>
@@ -59,10 +60,10 @@
                                     <c:forEach var="nat" items="${liste}" >
                                     
                                         <tr class="odd gradeX">
-                                            <td>${nat.idNationalite}</td>
+                                            <td>${nat.id}</td>
                                             <td>${nat.nom}</td>
-                                            <td><a href="Delete?id=${nat.idNationalite}">Supprimer</a></td>
-                                            <td><a href="Modifier?id=${nat.idNationalite}">Modifier</a></td>
+                                            <td><a href="Delete?id=${nat.id}">Supprimer</a></td>
+                                            <td><a href="Modifier?id=${nat.id}">Modifier</a></td>
                                         </tr>
                                       </c:forEach>
                                     </tbody>
