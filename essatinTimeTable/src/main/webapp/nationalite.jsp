@@ -28,14 +28,20 @@
 
 <body>
 <%@include file="header.jsp" %>
-
-        <div id="page-wrapper">
+ <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Nationalite</h1>
+                    <h1 class="page-header">Nationalites</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+             <div class="row">
+                <div class="col-lg-12">
+                   <ol class="breadcrumb">
+                   <li><a href="ajouterEnseignant.jsp"><i class="fa fa-plus"></i>Ajouter</a></li>
+                   </ol>
+                        </div>
+                        </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
@@ -69,7 +75,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                           
+                           </div>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -79,10 +85,11 @@
             </div>
 
                             
-        </div>
+     
+        
         <!-- /#page-wrapper -->
 
-    </div>
+   
     <!-- /#wrapper -->
 
     <!-- Core Scripts - Include with every page -->

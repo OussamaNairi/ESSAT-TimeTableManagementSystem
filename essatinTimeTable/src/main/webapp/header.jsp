@@ -277,7 +277,7 @@
                     
                         </li>
                         <li>
-                            <a href="enseignant.jsp"><i class="fa fa-user fa-fw"></i> Enseignants</a>
+                            <a href="AfficheEnseignant"><i class="fa fa-user fa-fw"></i> Enseignants</a>
                         </li>
                         <li>
                             <a href="etudiant.jsp"><i class="fa fa-users fa-fw"></i> Etudiants</a>
