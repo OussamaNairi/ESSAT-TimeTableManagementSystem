@@ -38,7 +38,7 @@
              <div class="row">
                 <div class="col-lg-12">
                    <ol class="breadcrumb">
-                   <li><a href="ajouterEnseignant.jsp"><i class="fa fa-plus"></i>Ajouter</a></li>
+                   <li><a href="ajouterNationalite.jsp"><i class="fa fa-plus"></i>Ajouter</a></li>
                    </ol>
                         </div>
                         </div>
@@ -68,8 +68,8 @@
                                         <tr class="odd gradeX">
                                             <td>${nat.id}</td>
                                             <td>${nat.nom}</td>
-                                            <td><a href="Delete?id=${nat.id}">Supprimer</a></td>
-                                            <td><a href="Modifier?id=${nat.id}">Modifier</a></td>
+                                            <td><a href="DeleteNationalite?id=${nat.id}">Supprimer</a></td>
+                                            <td><a href="ModifierNationalite?id=${nat.id}">Modifier</a></td>
                                         </tr>
                                       </c:forEach>
                                     </tbody>
