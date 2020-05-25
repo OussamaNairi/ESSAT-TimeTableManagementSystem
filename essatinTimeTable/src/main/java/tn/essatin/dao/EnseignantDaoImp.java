@@ -1,41 +1,34 @@
 package tn.essatin.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
+
 import java.util.List;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
+import org.hibernate.service.ServiceRegistry;
+
 import tn.essatin.model.Enseignant;
-import tn.essatin.model.Personne;
+
 
 public class EnseignantDaoImp implements IEnseignantDao{
+	
+	Session session; 
+	public EnseignantDaoImp() {      
+		SessionFactory sessionFactory ;  
+	ServiceRegistry serviceRegistry =  new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build(); 
+	Metadata metadata =  new MetadataSources(serviceRegistry).getMetadataBuilder().build(); sessionFactory=metadata.getSessionFactoryBuilder().build();  
+	this.session=sessionFactory.openSession(); 
+	}
 
 	@Override
 	public List<Enseignant> getAllEnseignants() {
-		Connection cnx=SingletonConnection.getConnection();
-		List<Enseignant> liste = new ArrayList<Enseignant>();
-		try {
-			PreparedStatement pre=cnx.prepareStatement("SELECT personne.ID_Personne,personne.nom,personne.prenom,personne.mail,personne.adresse, enseignant.IMG, enseignant.Poste, enseignant.EtablissementOrigine FROM personne, enseignant WHERE personne.ID_Personne = enseignant.ID_Enseignant");
-			ResultSet res=pre.executeQuery();
-			while(res.next()) {
-				Enseignant p=new Enseignant();
-				p.setIdPersonne(res.getInt("ID_Personne"));
-				p.setNom(res.getString("nom"));
-				p.setPrenom(res.getString("prenom"));
-				p.setMail(res.getString("mail"));
-				p.setAdresse(res.getString("adresse"));
-				p.setImage(res.getString("IMG"));
-				p.setPoste(res.getString("poste"));
-				p.setEtablissementOrigine(res.getString("etablissementOrigine"));
-				liste.add(p);
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return liste;
+		Query<Enseignant> query = this.session.createQuery("Select e from Enseignant e ");
+		List<Enseignant> e = query.getResultList(); 
+		return e;
 	}
 
 	@Override

@@ -1,6 +1,17 @@
 package tn.essatin.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="personne")
 public class Personne {
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ID_Personne")
 	private int idPersonne;
 	private String nom;
 	private String prenom;
@@ -9,9 +20,11 @@ public class Personne {
 	private String tel;
 	private String dateDeNaissance;
 	private String lieuDeNaissance;
+	@Column(name="ID_TypeIdentificateur")
 	private Identificateur identificateur;
 	private String numeroIdentificateur;
 	private String sexe;
+	@Column(name="ID_Nationalite")
 	private Nationalite nationalite;
 	public Personne() {
 		super();

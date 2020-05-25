@@ -1,18 +1,41 @@
 package tn.essatin.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="enseignant")
 public class Enseignant extends Personne{
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ID_Enseignant")
 	private int id;
+	@Column(name="CNSS")
 	private String cnss;
+	@Column(name="CNRPS")
 	private String cnrps;
+	@Column(name="DateEntree")
 	private String dateEntree;
+	@Column(name="Observation")
 	private String observation;
+	@Column(name="SituationM")
 	private String situationM;
+	@Column(name="NBEnfants")
 	private int nombreEnfants;
+	@Column(name="Diplome")
 	private String diplome;
+	@Column(name="RIB_IBAN")
 	private String ribIban;
+	@Column(name="IMG")
 	private String image;
+	@Column(name="Poste")
 	private String poste;
+	@Column(name="EtablissementOrigine")
 	private String etablissementOrigine;
+	@Column(name="ID_Personne")
 	private Personne personne;
 	public Enseignant() {
 		super();
