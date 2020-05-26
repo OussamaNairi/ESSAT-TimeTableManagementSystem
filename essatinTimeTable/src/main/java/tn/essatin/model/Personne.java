@@ -5,11 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="personne")
-public class Personne {
+@Inheritance(strategy=InheritanceType.JOINED)
+public abstract class Personne {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_Personne")
 	private int idPersonne;
@@ -20,11 +25,13 @@ public class Personne {
 	private String tel;
 	private String dateDeNaissance;
 	private String lieuDeNaissance;
-	@Column(name="ID_TypeIdentificateur")
+	@OneToOne
+	@JoinColumn(name="ID_TypeIdentificateur" ,nullable=false)
 	private Identificateur identificateur;
 	private String numeroIdentificateur;
 	private String sexe;
-	@Column(name="ID_Nationalite")
+	@OneToOne
+	@JoinColumn(name="ID_Nationalite" ,nullable=false)
 	private Nationalite nationalite;
 	public Personne() {
 		super();

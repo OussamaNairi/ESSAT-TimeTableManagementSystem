@@ -13,6 +13,10 @@
       <property name="show_sql">true</property>
       <property name="hbm2ddl.auto">update</property>
       <mapping class="tn.essatin.model.Nationalite" />
+      <mapping class="tn.essatin.model.Identificateur" />
+      <mapping class="tn.essatin.model.Personne" />
+      <mapping class="tn.essatin.model.Enseignant" />
+      <mapping class="tn.essatin.model.Etudiant" />
       
     
 

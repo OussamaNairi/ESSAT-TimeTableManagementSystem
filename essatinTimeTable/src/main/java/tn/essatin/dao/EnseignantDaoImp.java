@@ -12,6 +12,7 @@ import org.hibernate.query.Query;
 import org.hibernate.service.ServiceRegistry;
 
 import tn.essatin.model.Enseignant;
+import tn.essatin.model.Nationalite;
 
 
 public class EnseignantDaoImp implements IEnseignantDao{
@@ -33,25 +34,36 @@ public class EnseignantDaoImp implements IEnseignantDao{
 
 	@Override
 	public Enseignant getEnseignant(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		this.session.getTransaction().begin();    
+		String sql = "Select e from Enseignant e Where e.id = :id";           
+		Query<Enseignant> query = this.session.createQuery(sql); 
+		query.setParameter("id", id); 
+		Enseignant e=query.getSingleResult(); this.session.getTransaction().commit();
+		return e; 
 	}
 
 	@Override
 	public void addEnseignant(Enseignant e) {
-		// TODO Auto-generated method stub
+		this.session.getTransaction().begin();
+		this.session.save(e);  
+		this.session.getTransaction().commit();
 		
 	}
 
 	@Override
 	public void updateEnseignant(Enseignant e) {
-		// TODO Auto-generated method stub
+		this.session.getTransaction().begin(); 
+		this.session.merge(e); 
+		this.session.getTransaction().commit();
 		
 	}
 
 	@Override
 	public void deleteEnseignant(int id) {
-		// TODO Auto-generated method stub
+		Enseignant e= this.getEnseignant(id);
+		this.session.getTransaction().begin();
+		this.session.delete(e); 
+		this.session.getTransaction().commit();
 		
 	}
 

@@ -63,17 +63,27 @@
                                             <th>Prenom</th>
                                             <th>Email</th>
                                             <th>Adresse</th>
-                                            <th>Poste</th>
-                                            <th >Etablissement Origine</th>
-                                            <th >Actions</th>
-                                            <th>Image</th>
-                                            <th>Nom</th>
-                                            <th>Prenom</th>
-                                            <th>Email</th>
-                                            <th>Adresse</th>
-                                            <th>Poste</th>
-                                            <th >Etablissement Origine</th>
-                                            <th >Actions</th>
+                                             <th>Tel</th>
+                                            <th>Date de Naissance</th>
+                                            <th>Lieu de Naissance</th>
+                                            <th>Type Identificateur</th>
+                                            <th>Identificateur</th>
+                                            <th>Sexe</th>
+                                            <th>Nationalite</th>
+                                            <th>CNSS</th>
+                                            <th>CNRPS</th>
+                                            <th>Date Entree</th>
+                                            <th>Observation</th>
+                                            <th >Situation</th>
+                                            <th>Nombre Enfants</th>
+                                            <th >Diplome</th>
+                                             <th>RIB IBAN</th>
+                                               <th >Poste</th>
+                                             <th>Etablissement d'origine</th>
+                                              <th>Actions</th>
+                   
+
+                        
                                             
                                         </tr>
                                     </thead>
@@ -86,10 +96,26 @@
 <td>   ${en.prenom}</td>
 <td>  ${en.mail}</td>
 <td>   ${en.adresse}</td>
+<td>   ${en.tel}</td>
+<td>   ${en.dateDeNaissance}</td>
+<td>  ${en.lieuDeNaissance}</td>
+<td>  ${en.identificateur}</td>
+<td>  ${en.numeroIdentificateur}</td>
+<td>   ${en.sexe}</td>
+<td>   ${en.nationalite}</td>
+<td>  ${en.cnss}</td>
+<td>  ${en.cnrps}</td>
+<td>  ${en.dateEntree}</td>
+<td>   ${en.observation}</td>
+<td>   ${en.situationM}</td>
+<td>  ${en.nombreEnfants}</td>
+<td>  ${en.diplome}</td>
+<td>  ${en.ribIban}</td>
 <td>  ${en.poste}</td>
 <td>  ${en.etablissementOrigine}</td>
 
-<td><a href="Modifier?id=${en.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="Delete?id=${en.id}"><span class="fa fa-trash-o"></span></a></td>
+
+<td><a href="Modifier?id="><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="Delete?id="><span class="fa fa-trash-o"></span></a></td>
 
 </tr>
 </c:forEach>
@@ -98,19 +124,16 @@
                             </div>
                            
                         </div>
-                        <!-- /.panel-body -->
+                       
                     </div>
-                    <!-- /.panel -->
+                   
                 </div>
-                <!-- /.col-lg-12 -->
+              
             </div>
 
                             
         </div>
-        <!-- /#page-wrapper -->
 
-  
-    <!-- /#wrapper -->
 
     <!-- Core Scripts - Include with every page -->
     <script src="js/jquery-1.10.2.js"></script>

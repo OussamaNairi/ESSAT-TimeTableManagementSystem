@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Table(name="nationalite")
 public class Nationalite {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ID")
 	private int id;
 	@Column(name="libelle")
     private String nom;
@@ -34,6 +35,10 @@ public class Nationalite {
 	}
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+	@Override
+	public String toString() {
+		return nom;
 	}
     
 

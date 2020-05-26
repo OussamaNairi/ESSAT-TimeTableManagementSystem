@@ -2,17 +2,14 @@ package tn.essatin.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="enseignant")
+@PrimaryKeyJoinColumn(name="ID_Personne")
 public class Enseignant extends Personne{
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID_Enseignant")
-	private int id;
+
 	@Column(name="CNSS")
 	private String cnss;
 	@Column(name="CNRPS")
@@ -35,40 +32,16 @@ public class Enseignant extends Personne{
 	private String poste;
 	@Column(name="EtablissementOrigine")
 	private String etablissementOrigine;
-	@Column(name="ID_Personne")
-	private Personne personne;
 	public Enseignant() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public Enseignant(int idPersonne, String nom, String prenom, String mail, String adresse, String tel,
-			String dateDeNaissance,String lieuDeNaissance, Identificateur identificateur,String numeroIdentificateur, String sexe, Nationalite nationalite) {
-		super(idPersonne, nom, prenom, mail, adresse, tel, dateDeNaissance,lieuDeNaissance, identificateur,numeroIdentificateur, sexe, nationalite);
+			String dateDeNaissance, String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur,
+			String sexe, Nationalite nationalite) {
+		super(idPersonne, nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, identificateur,
+				numeroIdentificateur, sexe, nationalite);
 		// TODO Auto-generated constructor stub
-	}
-	public Enseignant(int id, String cnss, String cnrps, String dateEntree, String observation, String situationM,
-			int nombreEnfants, String diplome, String ribIban, String image, String poste, String etablissementOrigine,
-			Personne personne) {
-		super();
-		this.id = id;
-		this.cnss = cnss;
-		this.cnrps = cnrps;
-		this.dateEntree = dateEntree;
-		this.observation = observation;
-		this.situationM = situationM;
-		this.nombreEnfants = nombreEnfants;
-		this.diplome = diplome;
-		this.ribIban = ribIban;
-		this.image = image;
-		this.poste = poste;
-		this.etablissementOrigine = etablissementOrigine;
-		this.personne = personne;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getCnss() {
 		return cnss;
@@ -136,13 +109,6 @@ public class Enseignant extends Personne{
 	public void setEtablissementOrigine(String etablissementOrigine) {
 		this.etablissementOrigine = etablissementOrigine;
 	}
-	public Personne getPersonne() {
-		return personne;
-	}
-	public void setPersonne(Personne personne) {
-		this.personne = personne;
-	}
 	
 	
-
 }
