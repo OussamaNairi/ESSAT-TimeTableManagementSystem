@@ -19,6 +19,12 @@ public class Nationalite {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Nationalite(String nom) {
+		super();
+		this.nom = nom;
+	}
+
 	public Nationalite(int id, String nom) {
 		super();
 		this.id = id;

@@ -49,8 +49,8 @@
 
                         <div class="panel-footer">
                         
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;</i>Enregistrer</button>
-                            <button type="submit" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;</i>Annuler</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;</i>Ajouter</button>
+                            <button type="" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;</i>Annuler</button>
                            
                         </div>
                        </form>

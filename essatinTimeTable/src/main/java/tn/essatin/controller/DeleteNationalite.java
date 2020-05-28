@@ -10,19 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import tn.essatin.dao.INationaliteDao;
 import tn.essatin.dao.NationaliteDaoImp;
-import tn.essatin.model.Nationalite;
 
 /**
- * Servlet implementation class UpdateNationalite
+ * Servlet implementation class DeleteNationalite
  */
-@WebServlet("/UpdateNationalite")
-public class UpdateNationalite extends HttpServlet {
+@WebServlet("/DeleteNationalite")
+public class DeleteNationalite extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateNationalite() {
+    public DeleteNationalite() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,13 +30,9 @@ public class UpdateNationalite extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		int id=Integer.parseInt(request.getParameter("id"));
-		String nom=request.getParameter("nom");
-	
-		
 		INationaliteDao dao=new NationaliteDaoImp();
-		dao.updateNationalite(new Nationalite(id,nom));
+		dao.deleteNationalite(id);
 		request.getRequestDispatcher("AfficheNationalite").forward(request, response);
 	}
 

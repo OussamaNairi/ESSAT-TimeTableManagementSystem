@@ -13,16 +13,16 @@ import tn.essatin.dao.NationaliteDaoImp;
 import tn.essatin.model.Nationalite;
 
 /**
- * Servlet implementation class UpdateNationalite
+ * Servlet implementation class AjouterNationalite
  */
-@WebServlet("/UpdateNationalite")
-public class UpdateNationalite extends HttpServlet {
+@WebServlet("/AjouterNationalite")
+public class AjouterNationalite extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateNationalite() {
+    public AjouterNationalite() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,13 +31,11 @@ public class UpdateNationalite extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		int id=Integer.parseInt(request.getParameter("id"));
 		String nom=request.getParameter("nom");
-	
 		
 		INationaliteDao dao=new NationaliteDaoImp();
-		dao.updateNationalite(new Nationalite(id,nom));
+		dao.addNationalite(new Nationalite(nom));
+		
 		request.getRequestDispatcher("AfficheNationalite").forward(request, response);
 	}
 

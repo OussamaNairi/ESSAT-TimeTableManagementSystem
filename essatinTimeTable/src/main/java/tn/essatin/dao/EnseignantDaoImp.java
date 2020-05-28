@@ -12,7 +12,7 @@ import org.hibernate.query.Query;
 import org.hibernate.service.ServiceRegistry;
 
 import tn.essatin.model.Enseignant;
-import tn.essatin.model.Nationalite;
+
 
 
 public class EnseignantDaoImp implements IEnseignantDao{
