@@ -1,3 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="tn.essatin.model.Nationalite"%>
+<%@page import="tn.essatin.model.Identificateur"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -41,20 +45,20 @@
                         <form action="AjouterEnseignant" method="post">
   <div class="form-group">
     <label >Nom</label>
-    <input type="text" class="form-control" name="nom" aria-describedby="emailHelp" placeholder="Nom">
+    <input type="text" class="form-control" name="nom"  placeholder="Nom">
     
   </div>
   <div class="form-group">
     <label >Prenom</label>
-    <input type="password" class="form-control" name="prenom" placeholder="Prenom">
+    <input type="text" class="form-control" name="prenom" placeholder="Prenom">
   </div>
   <div class="form-group">
     <label>Email</label>
-    <input type="password" class="form-control" name="mail" placeholder="Email">
+    <input type="text" class="form-control" name="mail" placeholder="Email">
   </div>
   <div class="form-group">
     <label>Adresse</label>
-    <input type="password" class="form-control" name="adresse" placeholder="Adresse">
+    <input type="text" class="form-control" name="adresse" placeholder="Adresse">
   </div>
   <div class="form-group">
     <label>Telephone</label>
@@ -62,15 +66,20 @@
   </div>
   <div class="form-group">
     <label>Date de Naissance</label>
-    <input type="date" class="form-control" name="dateDeNaissance" placeholder="">
+    <input type="text" class="form-control" name="dateDeNaissance" placeholder="">
   </div>
   <div class="form-group">
     <label>Lieu de Naissance</label>
     <input type="text" class="form-control" name="lieuDeNaissance" placeholder="Lieu de Naissance">
   </div>
   <div class="form-group">
-    <label>Type Identificateur</label>
-    <input type="date" class="form-control" name="dateDeNaissance" placeholder="">
+   <label >Type Identificateur</label>
+    <select  class="form-control" name="identificateur"  >
+    <c:forEach var="iden" items="${iden}" >
+    <option value="${iden.id}"> ${iden.designation}</option> 
+
+</c:forEach>
+    </select>
   </div>
   <div class="form-group">
     <label>Numero Identificateur</label>
@@ -78,23 +87,27 @@
   </div>
   <div class="form-group">
     <label>Sexe</label>
-    <input type="text" class="form-control" name="numeroIdentificateur" placeholder="">
+    <input type="text" class="form-control" name="sexe" placeholder="sexe">
   </div>
   <div class="form-group">
-    <label>Nationalite</label>
-    <input type="text" class="form-control" name="numeroIdentificateur" placeholder="">
-  </div>
-  <div class="form-group">
+    <label >Nationalite</label>
+    <select  class="form-control" name="nationalite"  >
+    <c:forEach var="na" items="${na}" >
+    <option value="${na.id}"> ${na.nom}</option> 
+
+</c:forEach>
+    </select>
+  </div>  <div class="form-group">
     <label>CNSS</label>
-    <input type="text" class="form-control" name="numeroIdentificateur" placeholder="">
+    <input type="text" class="form-control" name="cnss" placeholder="CNSS">
   </div>
   <div class="form-group">
     <label>CNRPS</label>
-    <input type="text" class="form-control" name="numeroIdentificateur" placeholder="">
+    <input type="text" class="form-control" name="cnrps" placeholder="CNRPS">
   </div>
   <div class="form-group">
     <label>Date Entree</label>
-    <input type="date" class="form-control" name="dateEntree" placeholder="">
+    <input type="text" class="form-control" name="dateEntree" placeholder="">
   </div>
   <div class="form-group">
     <label>Observation</label>
@@ -133,7 +146,7 @@
                         <div class="panel-footer">
                         
                             <button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;</i>Enregistrer</button>
-                            <button type="submit" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;</i>Annuler</button>
+                            <button type="reset" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;</i>Annuler</button>
                            
                         </div>
                        </form>

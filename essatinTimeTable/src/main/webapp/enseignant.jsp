@@ -41,7 +41,7 @@
              <div class="row">
                 <div class="col-lg-12">
                    <ol class="breadcrumb">
-                   <li><a href="ajouterEnseignant.jsp"><i class="fa fa-plus"></i>Ajouter</a></li>
+                   <li><a href="AjouterEnseignantInter"><i class="fa fa-plus"></i>Ajouter</a></li>
                    </ol>
                         </div>
                         </div>
@@ -115,7 +115,7 @@
 <td>  ${en.etablissementOrigine}</td>
 
 
-<td><a href="Modifier?id="><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="Delete?id="><span class="fa fa-trash-o"></span></a></td>
+<td><a href="ModifierEnseignant?id="><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteEnseignant?id="><span class="fa fa-trash-o"></span></a></td>
 
 </tr>
 </c:forEach>

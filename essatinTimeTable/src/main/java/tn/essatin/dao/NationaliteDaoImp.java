@@ -36,7 +36,8 @@ public class NationaliteDaoImp implements INationaliteDao{
 		String sql = "Select n from Nationalite n Where n.id = :id";           
 		Query<Nationalite> query = this.session.createQuery(sql); 
 		query.setParameter("id", id); 
-		Nationalite n=query.getSingleResult(); this.session.getTransaction().commit();
+		Nationalite n=query.getSingleResult();
+		this.session.getTransaction().commit();
 		return n; 
 	}
 

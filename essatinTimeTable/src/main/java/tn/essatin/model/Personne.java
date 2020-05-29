@@ -37,6 +37,24 @@ public abstract class Personne {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Personne(String nom, String prenom, String mail, String adresse, String tel, String dateDeNaissance,
+			String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur, String sexe,
+			Nationalite nationalite) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.mail = mail;
+		this.adresse = adresse;
+		this.tel = tel;
+		this.dateDeNaissance = dateDeNaissance;
+		this.lieuDeNaissance = lieuDeNaissance;
+		this.identificateur = identificateur;
+		this.numeroIdentificateur = numeroIdentificateur;
+		this.sexe = sexe;
+		this.nationalite = nationalite;
+	}
+
 	public Personne(int idPersonne, String nom, String prenom, String mail, String adresse, String tel,
 			String dateDeNaissance,String lieuDeNaissance, Identificateur identificateur,String numeroIdentificateur, String sexe, Nationalite nationalite) {
 		super();
