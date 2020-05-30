@@ -12,8 +12,10 @@ import tn.essatin.dao.EnseignantDaoImp;
 import tn.essatin.dao.IEnseignantDao;
 import tn.essatin.dao.IIdentificateurDao;
 import tn.essatin.dao.INationaliteDao;
+
 import tn.essatin.dao.IdentificateurDaoImp;
 import tn.essatin.dao.NationaliteDaoImp;
+
 import tn.essatin.model.Enseignant;
 import tn.essatin.model.Identificateur;
 import tn.essatin.model.Nationalite;
