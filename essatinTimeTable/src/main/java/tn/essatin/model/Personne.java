@@ -1,5 +1,7 @@
 package tn.essatin.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +16,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name="personne")
 @Inheritance(strategy=InheritanceType.JOINED)
-public abstract class Personne {
+public abstract class Personne implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_Personne")
 	private int idPersonne;
@@ -34,14 +41,11 @@ public abstract class Personne {
 	@JoinColumn(name="ID_Nationalite" ,nullable=false)
 	private Nationalite nationalite;
 	public Personne() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+			}
 	
 	public Personne(String nom, String prenom, String mail, String adresse, String tel, String dateDeNaissance,
 			String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur, String sexe,
 			Nationalite nationalite) {
-		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.mail = mail;
@@ -57,7 +61,6 @@ public abstract class Personne {
 
 	public Personne(int idPersonne, String nom, String prenom, String mail, String adresse, String tel,
 			String dateDeNaissance,String lieuDeNaissance, Identificateur identificateur,String numeroIdentificateur, String sexe, Nationalite nationalite) {
-		super();
 		this.idPersonne = idPersonne;
 		this.nom = nom;
 		this.prenom = prenom;

@@ -260,7 +260,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="Principale"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                        
                        
@@ -280,7 +280,7 @@
                             <a href="AfficheEnseignant"><i class="fa fa-user fa-fw"></i> Enseignants</a>
                         </li>
                         <li>
-                            <a href="etudiant.jsp"><i class="fa fa-users fa-fw"></i> Etudiants</a>
+                            <a href="AfficheEtudiant"><i class="fa fa-users fa-fw"></i> Etudiants</a>
                         </li>
                         <li>
                             <a href="tables.html"><i class="fa fa-heart fa-fw"></i> Voeux</a>

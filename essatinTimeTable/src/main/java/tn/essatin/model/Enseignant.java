@@ -10,6 +10,11 @@ import javax.persistence.Table;
 @PrimaryKeyJoinColumn(name="ID_Personne")
 public class Enseignant extends Personne{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@Column(name="CNSS")
 	private String cnss;
 	@Column(name="CNRPS")
@@ -33,28 +38,17 @@ public class Enseignant extends Personne{
 	@Column(name="EtablissementOrigine")
 	private String etablissementOrigine;
 	public Enseignant() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
-	public Enseignant(int idPersonne, String nom, String prenom, String mail, String adresse, String tel,
-			String dateDeNaissance, String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur,
-			String sexe, Nationalite nationalite) {
-		super(idPersonne, nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, identificateur,
-				numeroIdentificateur, sexe, nationalite);
-		// TODO Auto-generated constructor stub
-	}
-	
+
+
 	public Enseignant(String nom, String prenom, String mail, String adresse, String tel, String dateDeNaissance,
 			String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur, String sexe,
-			Nationalite nationalite) {
-		super(nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, identificateur, numeroIdentificateur, sexe,
-				nationalite);
-		// TODO Auto-generated constructor stub
-	}
-	public Enseignant(String cnss, String cnrps, String dateEntree, String observation, String situationM,
+			Nationalite nationalite,String cnss, String cnrps, String dateEntree, String observation, String situationM,
 			int nombreEnfants, String diplome, String ribIban, String image, String poste,
 			String etablissementOrigine) {
-		super();
+		super(nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, identificateur, numeroIdentificateur, sexe,
+				nationalite);
 		this.cnss = cnss;
 		this.cnrps = cnrps;
 		this.dateEntree = dateEntree;
@@ -66,7 +60,10 @@ public class Enseignant extends Personne{
 		this.image = image;
 		this.poste = poste;
 		this.etablissementOrigine = etablissementOrigine;
+		// TODO Auto-generated constructor stub
 	}
+
+
 	public String getCnss() {
 		return cnss;
 	}

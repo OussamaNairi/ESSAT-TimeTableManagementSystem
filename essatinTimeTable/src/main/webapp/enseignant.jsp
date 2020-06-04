@@ -24,7 +24,7 @@
 
     <!-- SB Admin CSS - Include with every page -->
     <link href="css/sb-admin.css" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+ <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> 
 
 </head>
 
@@ -55,7 +55,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" class="display nowrap" id="dataTables-example" style="width:100%">
+                                <table class="table table-striped table-bordered table-hover"  id="dataTables-example" style="width:100%" >
                                     <thead>
                                         <tr>
                                            <th>Image</th>
@@ -148,11 +148,9 @@
     <script src="js/sb-admin.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
+<script>
     $(document).ready(function() {
         $('#dataTables-example').dataTable();
-        "scrollX": true
-    } );
     });
     </script>
 

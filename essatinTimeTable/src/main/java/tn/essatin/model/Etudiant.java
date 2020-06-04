@@ -8,19 +8,22 @@ import javax.persistence.Table;
 @Table(name="etudiant")
 @PrimaryKeyJoinColumn(name="ID_Personne")
 public class Etudiant extends Personne{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String description;
 
 	public Etudiant() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Etudiant(int idPersonne, String nom, String prenom, String mail, String adresse, String tel,
+	public Etudiant(String nom, String prenom, String mail, String adresse, String tel,
 			String dateDeNaissance, String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur,
-			String sexe, Nationalite nationalite) {
-		super(idPersonne, nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, identificateur,
+			String sexe, Nationalite nationalite,String description) {
+		super(nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, identificateur,
 				numeroIdentificateur, sexe, nationalite);
-		// TODO Auto-generated constructor stub
+		this.description = description;
 	}
 
 	public String getDescription() {

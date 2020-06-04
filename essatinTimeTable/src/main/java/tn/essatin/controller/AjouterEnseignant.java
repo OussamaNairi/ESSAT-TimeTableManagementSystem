@@ -12,13 +12,12 @@ import tn.essatin.dao.EnseignantDaoImp;
 import tn.essatin.dao.IEnseignantDao;
 import tn.essatin.dao.IIdentificateurDao;
 import tn.essatin.dao.INationaliteDao;
-
 import tn.essatin.dao.IdentificateurDaoImp;
 import tn.essatin.dao.NationaliteDaoImp;
-
 import tn.essatin.model.Enseignant;
 import tn.essatin.model.Identificateur;
 import tn.essatin.model.Nationalite;
+
 
 
 /**
@@ -68,8 +67,7 @@ public class AjouterEnseignant extends HttpServlet {
 		IIdentificateurDao dao2=new IdentificateurDaoImp();
 		Nationalite na=dao1.getNationalite(nationalite);
 		Identificateur iden=dao2.getIdentificateur(identificateur);
-		dao.addEnseignant(new Enseignant(nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, iden, numeroIdentificateur, sexe,na));
-		dao.addEnseignant(new Enseignant(cnss,cnrps,dateEntree,observation, situationM,nombreEnfants,diplome,ribIban,image,poste,etablissementOrigine));
+		dao.addEnseignant(new Enseignant(nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, iden, numeroIdentificateur, sexe,na,cnss,cnrps,dateEntree,observation, situationM,nombreEnfants,diplome,ribIban,image,poste,etablissementOrigine));
 		
 		request.getRequestDispatcher("AfficheEnseignant").forward(request, response);
 	}
