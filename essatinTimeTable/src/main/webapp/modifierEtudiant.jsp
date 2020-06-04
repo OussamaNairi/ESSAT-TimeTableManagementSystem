@@ -1,15 +1,9 @@
 <%@page import="java.util.List"%>
-<%@page import="tn.essatin.dao.INationaliteDao"%>
-<%@page import="tn.essatin.dao.NationaliteDaoImp"%>
-<%@page import="tn.essatin.dao.IEnseignantDao"%>
-<%@page import="tn.essatin.dao.EnseignantDaoImp"%>
-<%@page import="tn.essatin.dao.IIdentificateurDao"%>
-<%@page import="tn.essatin.dao.IdentificateurDaoImp"%>
+<%@page import="tn.essatin.dao.IEtudiantDao"%>
+<%@page import="tn.essatin.dao.EtudiantDaoImp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@page import="tn.essatin.model.Nationalite"%>
-     <%@page import="tn.essatin.model.Enseignant"%>
-      <%@page import="tn.essatin.model.Identificateur"%>
+    <%@page import="tn.essatin.model.Etudiant"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -19,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Enseignants</title>
+    <title>Etudiants</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +33,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Modifier un Enseignant</h1>
+                    <h1 class="page-header">Modifier un Etudiant</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -47,120 +41,70 @@
                 <div class="col-lg-12">
                    <div class="panel panel-primary">
                    <div class="panel-heading">
-                   Modifier Enseignant
+                   Modifier Etudiant
                         </div>
                         
                         <div class="panel-body">
-                        <form action="UpdateNationalite" method="get">
+                        <form action="UpdateEtudiant" method="get">
 <div class="form-group">
     <label >Nom</label>
-    <input type="text" class="form-control" name="nom"  value="${en.nom}">
+    <input type="text" class="form-control" name="nom"  value="${et.nom}">
     
   </div>
   <div class="form-group">
     <label >Prenom</label>
-    <input type="text" class="form-control" name="prenom" value="${en.prenom}">
+    <input type="text" class="form-control" name="prenom" value="${et.prenom}">
   </div>
   <div class="form-group">
     <label>Email</label>
-    <input type="text" class="form-control" name="mail" value="${en.mail}">
+    <input type="text" class="form-control" name="mail" value="${et.mail}">
   </div>
   <div class="form-group">
     <label>Adresse</label>
-    <input type="text" class="form-control" name="adresse" value="${en.adresse}">
+    <input type="text" class="form-control" name="adresse" value="${et.adresse}">
   </div>
   <div class="form-group">
     <label>Telephone</label>
-    <input type="text" class="form-control" name="tel" value="${en.tel}">
+    <input type="text" class="form-control" name="tel" value="${et.tel}">
   </div>
   <div class="form-group">
     <label>Date de Naissance</label>
-    <input type="text" class="form-control" name="dateDeNaissance" value="${en.dateDeNaissance}">
+    <input type="text" class="form-control" name="dateDeNaissance" value="${et.dateDeNaissance}">
   </div>
   <div class="form-group">
     <label>Lieu de Naissance</label>
-    <input type="text" class="form-control" name="lieuDeNaissance" value="${en.lieuDeNaissance}">
+    <input type="text" class="form-control" name="lieuDeNaissance" value="${et.lieuDeNaissance}">
   </div>
   <div class="form-group">
    <label >Type Identificateur</label>
     <select  class="form-control" name="identificateur"  >
-     <c:forEach var="ident" items="${ident}">
-     <c:if test="${ident.id==en.id}">
-    <option value="${ident.id}" selected> ${ident.designation}</option> 
-    </c:if>
-    <c:if test="${ident.id!=en.id}">
-    <option value="${ident.id}" > ${ident.designation}</option> 
-    </c:if>
+    <c:forEach var="iden" items="${iden}" >
+    <option value="${iden.id}"> ${iden.designation}</option> 
 
 </c:forEach>
     </select>
   </div>
   <div class="form-group">
     <label>Numero Identificateur</label>
-    <input type="text" class="form-control" name="numeroIdentificateur" value="${en.numeroIdentificateur}">
+    <input type="text" class="form-control" name="numeroIdentificateur" value="${et.numeroIdentificateur}">
   </div>
   <div class="form-group">
     <label>Sexe</label>
-    <input type="text" class="form-control" name="sexe" value="${en.sexe}">
+    <input type="text" class="form-control" name="sexe" value="${et.sexe}">
   </div>
   <div class="form-group">
     <label >Nationalite</label>
     <select  class="form-control" name="nationalite"  >
-     <c:forEach var="nat" items="${nat}">
-     <c:if test="${nat.id==en.id}">
-    <option value="${nat.id}" selected> ${nat.nom}</option> 
-    </c:if>
-    <c:if test="${nat.id!=en.id}">
-    <option value="${nat.id}" > ${nat.nom}</option> 
-    </c:if>
+    <c:forEach var="na" items="${na}" >
+    <option value="${na.id}"> ${na.nom}</option> 
 
 </c:forEach>
     </select>
   </div>  <div class="form-group">
-    <label>CNSS</label>
-    <input type="text" class="form-control" name="cnss" value="${en.cnss}">
+    <label>Description</label>
+    <input type="text" class="form-control" name="cnss" value="${et.description}">
   </div>
-  <div class="form-group">
-    <label>CNRPS</label>
-    <input type="text" class="form-control" name="cnrps" value="${en.cnrps}">
-  </div>
-  <div class="form-group">
-    <label>Date Entree</label>
-    <input type="text" class="form-control" name="dateEntree" value="${en.dateEntree}">
-  </div>
-  <div class="form-group">
-    <label>Observation</label>
-    <input type="text" class="form-control" name="observation" value="${en.observation}">
-  </div>
-  <div class="form-group">
-    <label>Situation</label>
-    <input type="text" class="form-control" name="situationM" value="${en.situationM}">
-  </div>
-  <div class="form-group">
-    <label>Nombre d'enfants</label>
-    <input type="text" class="form-control" name="nombreEnfants" value="${en.nombreEnfants}">
-  </div>
-  <div class="form-group">
-    <label>Diplome</label>
-    <input type="text" class="form-control" name="diplome" value="${en.diplome}">
-  </div>
-  <div class="form-group">
-    <label>RIB IBAN</label>
-    <input type="text" class="form-control" name="ribIban" value="${en.ribIban}">
-  </div>
-  <div class="form-group">
-    <label >Photo</label>
-    <input type="file" class="form-control-file" name="image" value="${en.image}">
-  </div>
-  <div class="form-group">
-    <label>Poste</label>
-    <input type="text" class="form-control" name="poste" value="${en.poste}">
-  </div>
-  <div class="form-group">
-    <label>Etablissement d'origine</label>
-    <input type="text" class="form-control" name="etablissementOrigine" value="${en.etablissementOrigine}">
-  </div>
-
+  
                         <div class="panel-footer">
                         
                             <button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;</i>Enregistrer</button>

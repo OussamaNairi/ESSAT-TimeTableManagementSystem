@@ -24,7 +24,7 @@ public abstract class Personne implements Serializable{
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID_Personne")
-	private int idPersonne;
+	private int id;
 	private String nom;
 	private String prenom;
 	private String mail;
@@ -59,9 +59,9 @@ public abstract class Personne implements Serializable{
 		this.nationalite = nationalite;
 	}
 
-	public Personne(int idPersonne, String nom, String prenom, String mail, String adresse, String tel,
+	public Personne(int id, String nom, String prenom, String mail, String adresse, String tel,
 			String dateDeNaissance,String lieuDeNaissance, Identificateur identificateur,String numeroIdentificateur, String sexe, Nationalite nationalite) {
-		this.idPersonne = idPersonne;
+		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.mail = mail;
@@ -74,11 +74,11 @@ public abstract class Personne implements Serializable{
 		this.sexe = sexe;
 		this.nationalite = nationalite;
 	}
-	public int getIdPersonne() {
-		return idPersonne;
+	public int getId() {
+		return id;
 	}
-	public void setIdPersonne(int idPersonne) {
-		this.idPersonne = idPersonne;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getNom() {
 		return nom;

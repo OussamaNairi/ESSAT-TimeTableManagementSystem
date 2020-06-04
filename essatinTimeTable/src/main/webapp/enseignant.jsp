@@ -115,7 +115,7 @@
 <td>  ${en.etablissementOrigine}</td>
 
 
-<td><a href="ModifierEnseignant?id="><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteEnseignant?id="><span class="fa fa-trash-o"></span></a></td>
+<td><a href="ModifierEnseignant?id=${en.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteEnseignant?id=${en.id}"><span class="fa fa-trash-o"></span></a></td>
 
 </tr>
 </c:forEach>
