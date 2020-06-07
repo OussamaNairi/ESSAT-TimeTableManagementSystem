@@ -41,7 +41,26 @@ public class Enseignant extends Personne{
 		
 	}
 
-
+	public Enseignant(int id,String nom, String prenom, String mail, String adresse, String tel, String dateDeNaissance,
+			String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur, String sexe,
+			Nationalite nationalite,String cnss, String cnrps, String dateEntree, String observation, String situationM,
+			int nombreEnfants, String diplome, String ribIban, String image, String poste,
+			String etablissementOrigine) {
+		super(id,nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, identificateur, numeroIdentificateur, sexe,
+				nationalite);
+		this.cnss = cnss;
+		this.cnrps = cnrps;
+		this.dateEntree = dateEntree;
+		this.observation = observation;
+		this.situationM = situationM;
+		this.nombreEnfants = nombreEnfants;
+		this.diplome = diplome;
+		this.ribIban = ribIban;
+		this.image = image;
+		this.poste = poste;
+		this.etablissementOrigine = etablissementOrigine;
+		// TODO Auto-generated constructor stub
+	}
 	public Enseignant(String nom, String prenom, String mail, String adresse, String tel, String dateDeNaissance,
 			String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur, String sexe,
 			Nationalite nationalite,String cnss, String cnrps, String dateEntree, String observation, String situationM,

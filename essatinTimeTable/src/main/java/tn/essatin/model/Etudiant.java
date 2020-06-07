@@ -17,6 +17,13 @@ public class Etudiant extends Personne{
 	public Etudiant() {
 		
 	}
+	public Etudiant(int id,String nom, String prenom, String mail, String adresse, String tel,
+			String dateDeNaissance, String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur,
+			String sexe, Nationalite nationalite,String description) {
+		super(id,nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, identificateur,
+				numeroIdentificateur, sexe, nationalite);
+		this.description = description;
+	}
 
 	public Etudiant(String nom, String prenom, String mail, String adresse, String tel,
 			String dateDeNaissance, String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur,

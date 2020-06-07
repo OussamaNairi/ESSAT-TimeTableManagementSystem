@@ -1,9 +1,15 @@
 <%@page import="java.util.List"%>
 <%@page import="tn.essatin.dao.IEtudiantDao"%>
 <%@page import="tn.essatin.dao.EtudiantDaoImp"%>
+<%@page import="tn.essatin.dao.INationaliteDao"%>
+<%@page import="tn.essatin.dao.NationaliteDaoImp"%>
+<%@page import="tn.essatin.dao.IIdentificateurDao"%>
+<%@page import="tn.essatin.dao.IdentificateurDaoImp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@page import="tn.essatin.model.Etudiant"%>
+        <%@page import="tn.essatin.model.Nationalite"%>
+      <%@page import="tn.essatin.model.Identificateur"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -78,8 +84,13 @@
   <div class="form-group">
    <label >Type Identificateur</label>
     <select  class="form-control" name="identificateur"  >
-    <c:forEach var="iden" items="${iden}" >
-    <option value="${iden.id}"> ${iden.designation}</option> 
+     <c:forEach var="ident" items="${ident}">
+     <c:if test="${ident.id==et.identificateur.id}">
+    <option value="${ident.id}" selected> ${ident.designation}</option> 
+    </c:if>
+    <c:if test="${ident.id!=et.identificateur.id}">
+    <option value="${ident.id}" > ${ident.designation}</option> 
+    </c:if>
 
 </c:forEach>
     </select>
@@ -94,9 +105,14 @@
   </div>
   <div class="form-group">
     <label >Nationalite</label>
-    <select  class="form-control" name="nationalite"  >
-    <c:forEach var="na" items="${na}" >
-    <option value="${na.id}"> ${na.nom}</option> 
+   <select  class="form-control" name="nationalite"  >
+     <c:forEach var="nat" items="${nat}">
+     <c:if test="${nat.id==et.nationalite.id}">
+    <option value="${nat.id}" selected> ${nat.nom}</option> 
+    </c:if>
+    <c:if test="${nat.id!=et.nationalite.id}">
+    <option value="${nat.id}" > ${nat.nom}</option> 
+    </c:if>
 
 </c:forEach>
     </select>
@@ -104,7 +120,7 @@
     <label>Description</label>
     <input type="text" class="form-control" name="cnss" value="${et.description}">
   </div>
-  
+    <input type="hidden" class="form-control" name="id"   value="${en.id}">
                         <div class="panel-footer">
                         
                             <button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;</i>Enregistrer</button>

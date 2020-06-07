@@ -1,13 +1,12 @@
 package tn.essatin.controller;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 import tn.essatin.dao.EtudiantDaoImp;
 import tn.essatin.dao.IEtudiantDao;
@@ -19,18 +18,17 @@ import tn.essatin.model.Etudiant;
 import tn.essatin.model.Identificateur;
 import tn.essatin.model.Nationalite;
 
-
 /**
- * Servlet implementation class ModifierEtudiant
+ * Servlet implementation class UpdateEtudiant
  */
-@WebServlet("/ModifierEtudiant")
-public class ModifierEtudiant extends HttpServlet {
+@WebServlet("/UpdateEtudiant")
+public class UpdateEtudiant extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ModifierEtudiant() {
+    public UpdateEtudiant() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,16 +38,25 @@ public class ModifierEtudiant extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id=Integer.parseInt(request.getParameter("id"));
-		IEtudiantDao dao=new EtudiantDaoImp();
-		Etudiant et=dao.getEtudiant(id);
-	    request.setAttribute("et", et);
-	    INationaliteDao dao1=new NationaliteDaoImp();
-		List<Nationalite> nat=dao1.getAllNationalites();
-		request.setAttribute("nat", nat);
+		String nom=request.getParameter("nom");
+        String prenom=request.getParameter("prenom");
+        String mail=request.getParameter("mail");
+        String adresse=request.getParameter("adresse");
+        String tel=request.getParameter("tel");
+        String dateDeNaissance=request.getParameter("dateDeNaissance");
+        String lieuDeNaissance=request.getParameter("lieuDeNaissance");
+        int identificateur=Integer.parseInt(request.getParameter("identificateur"));
+        String numeroIdentificateur=request.getParameter("numeroIdentificateur");
+        String sexe=request.getParameter("sexe");
+        int nationalite=Integer.parseInt(request.getParameter("nationalite"));
+        String description=request.getParameter("description");
+        IEtudiantDao dao=new EtudiantDaoImp();
+		INationaliteDao dao1=new NationaliteDaoImp();
 		IIdentificateurDao dao2=new IdentificateurDaoImp();
-		List<Identificateur> ident=dao2.getAllIdentificateurs();
-		request.setAttribute("ident", ident);
-	    request.getRequestDispatcher("modifierEtudiant.jsp").forward(request, response);
+		Nationalite na=dao1.getNationalite(nationalite);
+		Identificateur iden=dao2.getIdentificateur(identificateur);
+		dao.updateEtudiant(new Etudiant(id,nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, iden, numeroIdentificateur, sexe,na,description));
+		request.getRequestDispatcher("AfficheEtudiant").forward(request, response);
 	}
 
 	/**

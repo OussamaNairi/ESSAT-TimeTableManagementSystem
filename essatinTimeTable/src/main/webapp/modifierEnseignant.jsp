@@ -51,7 +51,7 @@
                         </div>
                         
                         <div class="panel-body">
-                        <form action="UpdateNationalite" method="get">
+                        <form action="UpdateEnseignant" method="get">
 <div class="form-group">
     <label >Nom</label>
     <input type="text" class="form-control" name="nom"  value="${en.nom}">
@@ -85,10 +85,10 @@
    <label >Type Identificateur</label>
     <select  class="form-control" name="identificateur"  >
      <c:forEach var="ident" items="${ident}">
-     <c:if test="${ident.id==en.id}">
+     <c:if test="${ident.id==en.identificateur.id}">
     <option value="${ident.id}" selected> ${ident.designation}</option> 
     </c:if>
-    <c:if test="${ident.id!=en.id}">
+    <c:if test="${ident.id!=en.identificateur.id}">
     <option value="${ident.id}" > ${ident.designation}</option> 
     </c:if>
 
@@ -107,10 +107,10 @@
     <label >Nationalite</label>
     <select  class="form-control" name="nationalite"  >
      <c:forEach var="nat" items="${nat}">
-     <c:if test="${nat.id==en.id}">
+     <c:if test="${nat.id==en.nationalite.id}">
     <option value="${nat.id}" selected> ${nat.nom}</option> 
     </c:if>
-    <c:if test="${nat.id!=en.id}">
+    <c:if test="${nat.id!=en.nationalite.id}">
     <option value="${nat.id}" > ${nat.nom}</option> 
     </c:if>
 
@@ -160,6 +160,7 @@
     <label>Etablissement d'origine</label>
     <input type="text" class="form-control" name="etablissementOrigine" value="${en.etablissementOrigine}">
   </div>
+  <input type="hidden" class="form-control" name="id"   value="${en.id}">
 
                         <div class="panel-footer">
                         
