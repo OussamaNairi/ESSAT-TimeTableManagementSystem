@@ -23,6 +23,14 @@ public class Etage {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Etage(int id, String nom, Bloc bloc) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.bloc = bloc;
+	}
+
 	public Etage(String nom, Bloc bloc) {
 		super();
 		this.nom = nom;

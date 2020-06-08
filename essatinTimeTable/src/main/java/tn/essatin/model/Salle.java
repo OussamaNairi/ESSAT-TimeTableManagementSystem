@@ -28,6 +28,16 @@ public class Salle {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Salle(int id, String nom, int capacite, TypeSalle typesalle, Etage etage) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.capacite = capacite;
+		this.typesalle = typesalle;
+		this.etage = etage;
+	}
+
 	public Salle(String nom, int capacite, TypeSalle typesalle, Etage etage) {
 		super();
 		this.nom = nom;

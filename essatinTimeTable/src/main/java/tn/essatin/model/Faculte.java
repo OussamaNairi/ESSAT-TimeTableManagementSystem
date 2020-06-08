@@ -20,6 +20,15 @@ public class Faculte {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Faculte(int id, String nom, String adresse, int nombreEffectif) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.adresse = adresse;
+		this.nombreEffectif = nombreEffectif;
+	}
+
 	public Faculte(String nom, String adresse, int nombreEffectif) {
 		super();
 		this.nom = nom;

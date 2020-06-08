@@ -304,21 +304,21 @@
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Architecture Universite<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Salle</a>
+                                    <a href="AfficheSalle">Salle</a>
                                 </li>
                                 <li>
-                                    <a href="#">Etage</a>
+                                    <a href="AfficheEtage">Etage</a>
                                 </li>
                                 <li>
-                                    <a href="#">Bloc</a>
+                                    <a href="AfficheBloc">Bloc</a>
                                    
                                 </li>
                                 <li>
-                                    <a href="#">Batiment</a>
+                                    <a href="AfficheBatiment">Batiment</a>
                                    
                                 </li>
                                 <li>
-                                    <a href="#">Faculte</a>
+                                    <a href="AfficheFaculte">Faculte</a>
                                    
                                 </li>
                             </ul>

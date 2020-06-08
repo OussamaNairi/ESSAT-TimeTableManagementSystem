@@ -17,12 +17,15 @@
       <mapping class="tn.essatin.model.Personne" />
       <mapping class="tn.essatin.model.Enseignant" />
       <mapping class="tn.essatin.model.Etudiant" />
-       <mapping class="tn.essatin.model.Faculte" />
+      <mapping class="tn.essatin.model.Faculte" />
       <mapping class="tn.essatin.model.Batiment" />
-      <mapping class="tn.essatin.model.Bloc" />
       <mapping class="tn.essatin.model.Etage" />
       <mapping class="tn.essatin.model.Salle" />
+      <mapping class="tn.essatin.model.Bloc" />
+      <mapping class="tn.essatin.model.Semaine" />
       <mapping class="tn.essatin.model.TypeSalle" />
+      <mapping class="tn.essatin.model.Jour" />
+
       
     
 

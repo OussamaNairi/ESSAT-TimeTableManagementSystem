@@ -26,6 +26,14 @@ public class Batiment {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Batiment(int id, String nom, Faculte fac) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.fac = fac;
+	}
+
 	public Batiment(String nom, Faculte fac) {
 		super();
 		this.nom = nom;

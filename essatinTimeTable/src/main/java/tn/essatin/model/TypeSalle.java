@@ -18,6 +18,13 @@ public class TypeSalle {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public TypeSalle(int id, String nom) {
+		super();
+		this.id = id;
+		this.nom = nom;
+	}
+
 	public TypeSalle(String nom) {
 		super();
 		this.nom = nom;

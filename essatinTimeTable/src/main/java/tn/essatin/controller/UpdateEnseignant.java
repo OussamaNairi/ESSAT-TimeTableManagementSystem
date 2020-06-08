@@ -1,6 +1,8 @@
 package tn.essatin.controller;
 
 import java.io.IOException;
+
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -51,6 +53,7 @@ public class UpdateEnseignant extends HttpServlet {
         String cnss=request.getParameter("cnss");
         String cnrps=request.getParameter("cnrps");
         String dateEntree=request.getParameter("dateEntree");
+     
         String observation=request.getParameter("observation");
         String situationM=request.getParameter("situationM");
         int nombreEnfants=Integer.parseInt(request.getParameter("nombreEnfants"));

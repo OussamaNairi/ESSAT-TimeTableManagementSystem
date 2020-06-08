@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="enseignant")
 @PrimaryKeyJoinColumn(name="ID_Personne")

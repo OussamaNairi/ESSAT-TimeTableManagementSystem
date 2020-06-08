@@ -96,7 +96,7 @@
 
 
 
-<td><a href="ModifierEtudiant?id="><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteEtudiant?id="><span class="fa fa-trash-o"></span></a></td>
+<td><a href="ModifierEtudiant?id=${et.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteEtudiant?id=${et.id}"><span class="fa fa-trash-o"></span></a></td>
 
 </tr>
 </c:forEach>

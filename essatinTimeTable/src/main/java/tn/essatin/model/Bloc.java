@@ -23,6 +23,14 @@ public class Bloc {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Bloc(int id, String nom, Batiment bat) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.bat = bat;
+	}
+
 	public Bloc(String nom, Batiment bat) {
 		super();
 		this.nom = nom;
