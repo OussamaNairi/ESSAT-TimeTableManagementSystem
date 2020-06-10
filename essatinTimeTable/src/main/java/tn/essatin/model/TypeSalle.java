@@ -1,17 +1,10 @@
 package tn.essatin.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="typesalle")
+
+
 public class TypeSalle {
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID_TypeSalle")
+
 	private int id;
 	private String nom;
 	public TypeSalle() {

@@ -2,28 +2,13 @@ package tn.essatin.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="personne")
-@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Personne implements Serializable{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID_Personne")
+
 	private int id;
 	private String nom;
 	private String prenom;
@@ -32,13 +17,9 @@ public abstract class Personne implements Serializable{
 	private String tel;
 	private String dateDeNaissance;
 	private String lieuDeNaissance;
-	@OneToOne
-	@JoinColumn(name="ID_TypeIdentificateur" ,nullable=false)
 	private Identificateur identificateur;
 	private String numeroIdentificateur;
 	private String sexe;
-	@OneToOne
-	@JoinColumn(name="ID_Nationalite" ,nullable=false)
 	private Nationalite nationalite;
 	public Personne() {
 			}

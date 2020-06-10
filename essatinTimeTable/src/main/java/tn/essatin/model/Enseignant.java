@@ -1,14 +1,8 @@
 package tn.essatin.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
 
 
-@Entity
-@Table(name="enseignant")
-@PrimaryKeyJoinColumn(name="ID_Personne")
+
 public class Enseignant extends Personne{
 
 	/**
@@ -16,27 +10,16 @@ public class Enseignant extends Personne{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	@Column(name="CNSS")
 	private String cnss;
-	@Column(name="CNRPS")
 	private String cnrps;
-	@Column(name="DateEntree")
 	private String dateEntree;
-	@Column(name="Observation")
 	private String observation;
-	@Column(name="SituationM")
 	private String situationM;
-	@Column(name="NBEnfants")
 	private int nombreEnfants;
-	@Column(name="Diplome")
 	private String diplome;
-	@Column(name="RIB_IBAN")
 	private String ribIban;
-	@Column(name="IMG")
 	private String image;
-	@Column(name="Poste")
 	private String poste;
-	@Column(name="EtablissementOrigine")
 	private String etablissementOrigine;
 	public Enseignant() {
 		

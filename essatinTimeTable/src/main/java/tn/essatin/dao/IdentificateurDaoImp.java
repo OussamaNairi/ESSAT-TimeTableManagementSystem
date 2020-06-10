@@ -1,64 +1,115 @@
 package tn.essatin.dao;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.Session;
 
-import org.hibernate.query.Query;
-
-
-import tn.essatin.hibernate.HibernateUtil;
 import tn.essatin.model.Identificateur;
-
+import tn.essatin.singleton.SingletonConnection;
 
 public class IdentificateurDaoImp implements IIdentificateurDao{
-
-	Session session = HibernateUtil.getSessionFactory().openSession();
+	
 
 
 	@Override
 	public List<Identificateur> getAllIdentificateurs() {
-		session.getTransaction().begin(); 
-		Query<Identificateur> query = session.createQuery("Select i from Identificateur i ");
-		List<Identificateur> i = query.getResultList(); 
-		session.getTransaction().commit();
-		return i;
+		Connection cnx=SingletonConnection.getConnection();
+		List<Identificateur> liste = new ArrayList<Identificateur>();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("select * from typeidentificateur");
+			ResultSet res=pre.executeQuery();
+			while(res.next()) {
+				Identificateur n=new Identificateur();
+				n.setId(res.getInt("ID_TypeIdentificateur"));
+				n.setDesignation(res.getString("TypeIdentificateur"));
+				
+				liste.add(n);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return liste;
+	
 	}
 
 	@Override
 	public Identificateur getIdentificateur(int id) {
-		session.getTransaction().begin();    
-		String sql = "Select i from Identificateur i Where i.id = :id";           
-		Query<Identificateur> query = session.createQuery(sql); 
-		query.setParameter("id", id); 
-		Identificateur i=query.getSingleResult(); 
-		session.getTransaction().commit();
-		return i; 
-	}
-
-	@Override
-	public void addIdentificateur(Identificateur i) {
-		session.getTransaction().begin();
-		session.save(i);  
-		session.getTransaction().commit();
+		Connection cnx=SingletonConnection.getConnection();
+		Identificateur n=null;
+		try {
+			PreparedStatement pre=cnx.prepareStatement("select * from typeidentificateur where ID_TypeIdentificateur=?");
+			pre.setInt(1,id);
+			ResultSet res=pre.executeQuery();
+			if(res.next()) {
+				 n=new Identificateur();
+				n.setId(res.getInt("ID_TypeIdentificateur"));
+				n.setDesignation(res.getString("TypeIdentificateur"));
+		
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return n;
 		
 	}
 
 	@Override
-	public void updateIdentificateur(Identificateur i) {
-		session.getTransaction().begin(); 
-		session.merge(i); 
-		session.getTransaction().commit();
+	public void addIdentificateur(Identificateur n) {
+		
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("insert into typeidentificateur values(null,?)");
+			pre.setString(1,n.getDesignation());
+			pre.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void updateIdentificateur(Identificateur n) {
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("update typeidentificateur set TypeIdentificateur=? where ID_TypeIdentificateur=?");
+			pre.setString(1,n.getDesignation());
+			pre.setInt(2,n.getId());
+			pre.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
 	@Override
 	public void deleteIdentificateur(int id) {
-		Identificateur i= this.getIdentificateur(id);
-		session.getTransaction().begin();
-		session.delete(i); 
-		session.getTransaction().commit();
+		
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("delete from typeidentificateur where ID_TypeIdentificateur=?");
+			pre.setInt(1,id);
+			pre.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
 		
 	}
 
-}
+

@@ -1,12 +1,6 @@
 package tn.essatin.model;
 
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="etudiant")
-@PrimaryKeyJoinColumn(name="ID_Personne")
 public class Etudiant extends Personne{
 	/**
 	 * 

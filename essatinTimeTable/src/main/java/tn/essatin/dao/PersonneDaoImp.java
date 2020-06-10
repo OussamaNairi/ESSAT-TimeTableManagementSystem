@@ -1,61 +1,112 @@
 package tn.essatin.dao;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 
-import tn.essatin.hibernate.HibernateUtil;
 import tn.essatin.model.Personne;
+import tn.essatin.singleton.SingletonConnection;
 
 public class PersonneDaoImp implements IPersonneDao{
 	
-	Session session = HibernateUtil.getSessionFactory().openSession();
 
 
 	@Override
 	public List<Personne> getAllPersonnes() {
-		session.getTransaction().begin(); 
-		Query<Personne> query = session.createQuery("Select p from Personne p ");
-		List<Personne> p = query.getResultList(); 
-		session.getTransaction().commit();
-		return p;
+		Connection cnx=SingletonConnection.getConnection();
+		List<Personne> liste = new ArrayList<Personne>();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("select * from Personne");
+			ResultSet res=pre.executeQuery();
+			while(res.next()) {
+				
+			
+				
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return liste;
+	
 	}
 
 	@Override
 	public Personne getPersonne(int id) {
-		session.getTransaction().begin();    
-		String sql = "Select p from Personne p Where p.id = :id";           
-		Query<Personne> query = session.createQuery(sql); 
-		query.setParameter("id", id); 
-		Personne p=query.getSingleResult();
-		session.getTransaction().commit();
-		return p; 
-	}
-
-	@Override
-	public void addPersonne(Personne p) {
-		session.getTransaction().begin();
-		session.save(p);  
-		session.getTransaction().commit();
+		Connection cnx=SingletonConnection.getConnection();
+		Personne n=null;
+		try {
+			PreparedStatement pre=cnx.prepareStatement("select * from Personne where ID=?");
+			pre.setInt(1,id);
+			ResultSet res=pre.executeQuery();
+			if(res.next()) {
+				
+		
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return n;
 		
 	}
 
 	@Override
-	public void updatePersonne(Personne p) {
-		session.getTransaction().begin(); 
-		session.merge(p); 
-		session.getTransaction().commit();
+	public void addPersonne(Personne n) {
+		
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("insert into Personne values(null,?)");
+			pre.setString(1,n.getNom());
+			pre.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void updatePersonne(Personne n) {
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("update Personne set libelle=? where ID=?");
+			pre.setString(1,n.getNom());
+			pre.setInt(2,n.getId());
+			pre.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
 	@Override
 	public void deletePersonne(int id) {
-		Personne p= this.getPersonne(id);
-		session.getTransaction().begin();
-		session.delete(p); 
-	    session.getTransaction().commit();
+		
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("delete from Personne where ID=?");
+			pre.setInt(1,id);
+			pre.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
 		
 	}
 
-}
+

@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Enseignants</title>
+    <title>Nationalite</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Modifier un Enseignant</h1>
+                    <h1 class="page-header">Modifier la nationalite</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -41,14 +41,14 @@
                 <div class="col-lg-12">
                    <div class="panel panel-primary">
                    <div class="panel-heading">
-                   Modifier Enseignant
+                   Modifier Nationalite
                         </div>
                         
                         <div class="panel-body">
                         <form action="UpdateNationalite" method="get">
   <div class="form-group">
     <label >ID</label>
-    <input type="text" class="form-control" name="id"  value="${na.id}">
+    <input type="text" class="form-control" name="id"  value="${na.id}" readonly="readonly">
     
   </div>
   <div class="form-group">

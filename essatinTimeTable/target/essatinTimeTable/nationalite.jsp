@@ -45,7 +45,7 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
                             Liste des nationalites
                         </div>
@@ -57,8 +57,8 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Nationalite</th>
-                                            <th></th>
-                                            <th></th>
+                                            <th>Actions</th>
+                                            
                                         </tr>
                                   
                                     </thead>
@@ -68,8 +68,7 @@
                                         <tr class="odd gradeX">
                                             <td>${nat.id}</td>
                                             <td>${nat.nom}</td>
-                                            <td><a href="DeleteNationalite?id=${nat.id}">Supprimer</a></td>
-                                            <td><a href="ModifierNationalite?id=${nat.id}">Modifier</a></td>
+                                             <td><a href="ModifierNationalite?id=${nat.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteNationalite?id=${nat.id}"><span class="fa fa-trash-o"></span></a></td>
                                         </tr>
                                       </c:forEach>
                                     </tbody>

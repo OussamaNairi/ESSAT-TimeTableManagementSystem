@@ -1,26 +1,10 @@
 package tn.essatin.model;
 
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-
-@Entity
-@Table(name="batiment")
 public class Batiment {
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="ID_Batiment")
+
 	private int id;
 	private String nom;
-	@ManyToOne(cascade =CascadeType.ALL)
-	@JoinColumn(name = "ID_Faculte")
 	private Faculte fac;
 	public Batiment() {
 		super();
