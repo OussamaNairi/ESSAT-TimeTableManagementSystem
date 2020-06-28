@@ -63,13 +63,14 @@ public class AjouterEnseignant extends HttpServlet {
          String image=request.getParameter("image");
          String poste=request.getParameter("poste");
          String etablissementOrigine=request.getParameter("etablissementOrigine");
+         Boolean responsableDepartement=Boolean.parseBoolean(request.getParameter("responsableDepartement"));
 		
 		IEnseignantDao dao=new EnseignantDaoImp();
 		INationaliteDao dao1=new NationaliteDaoImp();
 		IIdentificateurDao dao2=new IdentificateurDaoImp();
 		Nationalite na=dao1.getNationalite(nationalite);
 		Identificateur iden=dao2.getIdentificateur(identificateur);
-		dao.addEnseignant(new Enseignant(nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, iden, numeroIdentificateur, sexe,na,cnss,cnrps,dateEntree,observation, situationM,nombreEnfants,diplome,ribIban,image,poste,etablissementOrigine));
+		dao.addEnseignant(new Enseignant(nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, iden, numeroIdentificateur, sexe,na,cnss,cnrps,dateEntree,observation, situationM,nombreEnfants,diplome,ribIban,image,poste,etablissementOrigine,responsableDepartement));
 		
 		request.getRequestDispatcher("AfficheEnseignant").forward(request, response);
 	}

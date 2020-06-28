@@ -265,13 +265,13 @@
                        
                        
                                   <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Departement<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Répartition<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="identificateur.jsp">Identificateur</a>
+                                    <a href="identificateur.jsp">Liste des Matières</a>
                                 </li>
                                 <li>
-                                    <a href="AfficheNationalite">Nationalite</a>
+                                   <a href="AfficheEnseignant"><i class="fa fa-user fa-fw"></i>Liste des Enseignants</a>
                                 </li>
                             </ul>
                     

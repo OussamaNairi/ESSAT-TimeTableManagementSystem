@@ -20,7 +20,7 @@ public class EnseignantDaoImp implements IEnseignantDao{
 		Connection cnx=SingletonConnection.getConnection();
 		List<Enseignant> liste = new ArrayList<Enseignant>();
 		try {
-			PreparedStatement pre=cnx.prepareStatement("SELECT personne.ID_Personne,personne.nom,personne.prenom,personne.mail,personne.adresse, enseignant.IMG, enseignant.Poste, enseignant.EtablissementOrigine FROM personne, enseignant WHERE personne.ID_Personne = enseignant.ID_Enseignant");
+			PreparedStatement pre=cnx.prepareStatement("SELECT personne.ID_Personne,personne.nom,personne.prenom,personne.mail,personne.adresse, enseignant.IMG, enseignant.Poste, enseignant.EtablissementOrigine FROM personne, enseignant WHERE personne.ID_Personne = enseignant.ID_Personne");
 			ResultSet res=pre.executeQuery();
 			while(res.next()) {
 				Enseignant e=new Enseignant();
@@ -49,7 +49,39 @@ public class EnseignantDaoImp implements IEnseignantDao{
 
 	@Override
 	public void addEnseignant(Enseignant e) {
-		// TODO Auto-generated method stub
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("insert into personne values(null,?,?,?,?,?,?,?,?,?,?,?)");
+			pre.setString(1,e.getNom());
+			pre.setString(2,e.getPrenom());
+			pre.setString(3,e.getMail());
+			pre.setString(4,e.getAdresse());
+			pre.setString(5,e.getTel());
+			pre.setString(6,e.getDateDeNaissance());
+			pre.setString(7,e.getLieuDeNaissance());
+			pre.setInt(8,e.getIdentificateur().getId());
+			pre.setString(9,e.getNumeroIdentificateur());
+			pre.setString(10,e.getSexe());
+			pre.setInt(11,e.getNationalite().getId());
+			pre.executeUpdate();
+			PreparedStatement pre2=cnx.prepareStatement("insert into enseignant values(null,?,?,?,?,?,?,?,?,?,?,?,?,LAST_INSERT_ID())");
+			pre2.setString(1,e.getCnss());
+			pre2.setString(2,e.getCnrps());
+			pre2.setString(3,e.getDateEntree());
+			pre2.setString(4,e.getObservation());
+			pre2.setString(5,e.getSituationM());
+			pre2.setInt(6,e.getNombreEnfants());
+			pre2.setString(7,e.getDiplome());
+			pre2.setString(8,e.getRibIban());
+			pre2.setString(9,e.getImage());
+			pre2.setString(10,e.getPoste());
+			pre2.setString(11,e.getEtablissementOrigine());
+			pre2.setBoolean(12,e.getResponsableDepartement());
+			pre2.executeUpdate();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 	}
 

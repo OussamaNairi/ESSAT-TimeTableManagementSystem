@@ -10,6 +10,7 @@ public class Enseignant extends Personne{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	private int id;
 	private String cnss;
 	private String cnrps;
 	private String dateEntree;
@@ -21,6 +22,7 @@ public class Enseignant extends Personne{
 	private String image;
 	private String poste;
 	private String etablissementOrigine;
+	private Boolean responsableDepartement;
 	public Enseignant() {
 		
 	}
@@ -29,7 +31,7 @@ public class Enseignant extends Personne{
 			String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur, String sexe,
 			Nationalite nationalite,String cnss, String cnrps, String dateEntree, String observation, String situationM,
 			int nombreEnfants, String diplome, String ribIban, String image, String poste,
-			String etablissementOrigine) {
+			String etablissementOrigine,Boolean responsableDepartement) {
 		super(id,nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, identificateur, numeroIdentificateur, sexe,
 				nationalite);
 		this.cnss = cnss;
@@ -43,13 +45,15 @@ public class Enseignant extends Personne{
 		this.image = image;
 		this.poste = poste;
 		this.etablissementOrigine = etablissementOrigine;
+		this.responsableDepartement = responsableDepartement;
+		
 		// TODO Auto-generated constructor stub
 	}
 	public Enseignant(String nom, String prenom, String mail, String adresse, String tel, String dateDeNaissance,
 			String lieuDeNaissance, Identificateur identificateur, String numeroIdentificateur, String sexe,
 			Nationalite nationalite,String cnss, String cnrps, String dateEntree, String observation, String situationM,
 			int nombreEnfants, String diplome, String ribIban, String image, String poste,
-			String etablissementOrigine) {
+			String etablissementOrigine,Boolean responsableDepartement) {
 		super(nom, prenom, mail, adresse, tel, dateDeNaissance, lieuDeNaissance, identificateur, numeroIdentificateur, sexe,
 				nationalite);
 		this.cnss = cnss;
@@ -63,9 +67,18 @@ public class Enseignant extends Personne{
 		this.image = image;
 		this.poste = poste;
 		this.etablissementOrigine = etablissementOrigine;
+		this.responsableDepartement = responsableDepartement;
 		// TODO Auto-generated constructor stub
 	}
 
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getCnss() {
 		return cnss;
@@ -132,6 +145,14 @@ public class Enseignant extends Personne{
 	}
 	public void setEtablissementOrigine(String etablissementOrigine) {
 		this.etablissementOrigine = etablissementOrigine;
+	}
+
+	public Boolean getResponsableDepartement() {
+		return responsableDepartement;
+	}
+
+	public void setResponsableDepartement(Boolean responsableDepartement) {
+		this.responsableDepartement = responsableDepartement;
 	}
 	
 	
