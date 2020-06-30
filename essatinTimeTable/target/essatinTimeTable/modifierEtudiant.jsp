@@ -54,36 +54,36 @@
                         <form action="UpdateEtudiant" method="get">
 <div class="form-group">
     <label >Nom</label>
-    <input type="text" class="form-control" name="nom"  value="${et.nom}">
+    <input type="text" class="form-control" name="nom"  value="${et.nom}" readonly="readonly">>
     
   </div>
   <div class="form-group">
     <label >Prenom</label>
-    <input type="text" class="form-control" name="prenom" value="${et.prenom}">
+    <input type="text" class="form-control" name="prenom" value="${et.prenom}" readonly="readonly">>
   </div>
   <div class="form-group">
     <label>Email</label>
-    <input type="text" class="form-control" name="mail" value="${et.mail}">
+    <input type="text" class="form-control" name="mail" value="${et.mail}" readonly="readonly">>
   </div>
   <div class="form-group">
     <label>Adresse</label>
-    <input type="text" class="form-control" name="adresse" value="${et.adresse}">
+    <input type="text" class="form-control" name="adresse" value="${et.adresse}" readonly="readonly">>
   </div>
   <div class="form-group">
     <label>Telephone</label>
-    <input type="text" class="form-control" name="tel" value="${et.tel}">
+    <input type="text" class="form-control" name="tel" value="${et.tel}" readonly="readonly">>
   </div>
   <div class="form-group">
     <label>Date de Naissance</label>
-    <input type="text" class="form-control" name="dateDeNaissance" value="${et.dateDeNaissance}">
+    <input type="text" class="form-control" name="dateDeNaissance" value="${et.dateDeNaissance}" readonly="readonly">>
   </div>
   <div class="form-group">
     <label>Lieu de Naissance</label>
-    <input type="text" class="form-control" name="lieuDeNaissance" value="${et.lieuDeNaissance}">
+    <input type="text" class="form-control" name="lieuDeNaissance" value="${et.lieuDeNaissance}" readonly="readonly">>
   </div>
   <div class="form-group">
    <label >Type Identificateur</label>
-    <select  class="form-control" name="identificateur"  >
+    <select  class="form-control" name="identificateur"   readonly="readonly">>
      <c:forEach var="ident" items="${ident}">
      <c:if test="${ident.id==et.identificateur.id}">
     <option value="${ident.id}" selected> ${ident.designation}</option> 
@@ -97,15 +97,15 @@
   </div>
   <div class="form-group">
     <label>Numero Identificateur</label>
-    <input type="text" class="form-control" name="numeroIdentificateur" value="${et.numeroIdentificateur}">
+    <input type="text" class="form-control" name="numeroIdentificateur" value="${et.numeroIdentificateur}" readonly="readonly">>
   </div>
   <div class="form-group">
     <label>Sexe</label>
-    <input type="text" class="form-control" name="sexe" value="${et.sexe}">
+    <input type="text" class="form-control" name="sexe" value="${et.sexe}" readonly="readonly">>
   </div>
   <div class="form-group">
     <label >Nationalite</label>
-   <select  class="form-control" name="nationalite"  >
+   <select  class="form-control" name="nationalite"  readonly="readonly">>
      <c:forEach var="nat" items="${nat}">
      <c:if test="${nat.id==et.nationalite.id}">
     <option value="${nat.id}" selected> ${nat.nom}</option> 
@@ -118,7 +118,7 @@
     </select>
   </div>  <div class="form-group">
     <label>Description</label>
-    <input type="text" class="form-control" name="cnss" value="${et.description}">
+    <input type="text" class="form-control" name="cnss" value="${et.description}" readonly="readonly">>
   </div>
     <input type="hidden" class="form-control" name="id"   value="${en.id}">
                         <div class="panel-footer">

@@ -1,6 +1,6 @@
-<%@page import="tn.essatin.dao.IEnseignantDao"%>
-<%@page import="tn.essatin.dao.EnseignantDaoImp"%>
-<%@page import="tn.essatin.model.Enseignant"%>
+<%@page import="tn.essatin.dao.IPfeDao"%>
+<%@page import="tn.essatin.dao.PfeDaoImp"%>
+<%@page import="tn.essatin.model.Pfe"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Enseignants</title>
+    <title>PFE</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +34,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Enseignants</h1>
+                    <h1 class="page-header">PFE</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -50,7 +50,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            Liste des enseignants
+                            Liste des PFE
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -58,11 +58,16 @@
                                 <table class="table table-striped table-bordered table-hover"  id="dataTables-example"  >
                                     <thead>
                                         <tr>
-                                           <th>ID</th>
-                                            <th>Nom</th>
-                                            <th>Prenom</th>
-                                            <th>Email</th>
-                                            <th>Tel</th>
+                                           <th>Titre</th>
+                                            <th>Description</th>
+                                            <th>Mots Cle</th>
+                                            <th>Technologie</th>
+                                            <th>Date Debut</th>
+                                             <th>Date Fin</th>
+                                             <th>Projet Externe</th>
+                                             <th>Nom Societe</th>
+                                             <th>Enseignant</th>
+                                             <th>Departement</th>
                                            <th>Actions</th>
                    
 
@@ -71,18 +76,22 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <c:forEach var="en" items="${liste}" >
+                                        <c:forEach var="p" items="${liste}" >
 
 <tr>
-<td>  ${en.id}</td>
-<td> ${en.nom}</td>
-<td>  ${en.prenom}</td>
-<td>  ${en.mail}</td>
-<td>   ${en.tel}</td>
+<td>  ${p.titre}</td>
+<td> ${p.description}</td>
+<td>  ${p.motCle}</td>
+<td>  ${p.technologie}</td>
+<td>   ${p.dateDebut}</td>
+<td>   ${p.dateFin}</td>
+<td>   ${p.projetExterne}</td>
+<td>   ${p.nomSociete}</td>
+<td>   ${p.idenseignant}</td>
+<td>   ${p.idepartement}</td>
 
 
-
-<td><a href="ModifierEnseignant?id=${en.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteEnseignant?id=${en.id}"><span class="fa fa-trash-o"></span></a></td>
+<td><a href="ModifierEnseignant?id=${p.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteEnseignant?id=${p.id}"><span class="fa fa-trash-o"></span></a></td>
 
 </tr>
 </c:forEach>

@@ -61,16 +61,8 @@
                                              <th>Nom</th>
                                             <th>Prenom</th>
                                             <th>Email</th>
-                                            <th>Adresse</th>
-                                             <th>Tel</th>
-                                            <th>Date de Naissance</th>
-                                            <th>Lieu de Naissance</th>
-                                            <th>Type Identificateur</th>
-                                            <th>Identificateur</th>
-                                            <th>Sexe</th>
-                                            <th>Nationalite</th>
-                                            <th>Description</th>
-                                           <th>Actions</th>
+                                              <th>Tel</th>
+                                              <th>Actions</th>
                    
 
                         
@@ -84,15 +76,8 @@
 <td> ${en.nom}</td>
 <td>   ${en.prenom}</td>
 <td>  ${en.mail}</td>
-<td>   ${en.adresse}</td>
 <td>   ${en.tel}</td>
-<td>   ${en.dateDeNaissance}</td>
-<td>  ${en.lieuDeNaissance}</td>
-<td>  ${en.identificateur}</td>
-<td>  ${en.numeroIdentificateur}</td>
-<td>   ${en.sexe}</td>
-<td>   ${en.nationalite}</td>
-<td>  ${en.description}</td>
+
 
 
 

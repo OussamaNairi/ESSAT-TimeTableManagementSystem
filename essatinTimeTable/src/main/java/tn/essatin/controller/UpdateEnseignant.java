@@ -53,7 +53,6 @@ public class UpdateEnseignant extends HttpServlet {
         String cnss=request.getParameter("cnss");
         String cnrps=request.getParameter("cnrps");
         String dateEntree=request.getParameter("dateEntree");
-     
         String observation=request.getParameter("observation");
         String situationM=request.getParameter("situationM");
         int nombreEnfants=Integer.parseInt(request.getParameter("nombreEnfants"));

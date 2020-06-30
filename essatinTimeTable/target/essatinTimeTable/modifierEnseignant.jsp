@@ -94,6 +94,7 @@
 
 </c:forEach>
     </select>
+
   </div>
   <div class="form-group">
     <label>Numero Identificateur</label>
@@ -115,7 +116,11 @@
     </c:if>
 
 </c:forEach>
+                   
     </select>
+                   <div class="text-right">
+                   <a href="AjouterNationalite"><i class="fa fa-plus"></i>Ajouter</a>
+                   </div>
   </div>  <div class="form-group">
     <label>CNSS</label>
     <input type="text" class="form-control" name="cnss" value="${en.cnss}">

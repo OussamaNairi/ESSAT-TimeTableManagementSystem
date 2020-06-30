@@ -268,20 +268,19 @@
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Répartition<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="identificateur.jsp">Liste des Matières</a>
+                                    <a href="AfficheMatiere"><i class="fa fa-folder fa-fw"></i>Liste des Matières</a>
                                 </li>
                                 <li>
                                    <a href="AfficheEnseignant"><i class="fa fa-user fa-fw"></i>Liste des Enseignants</a>
+                                    <li>
+                            <a href="AfficheEtudiant"><i class="fa fa-users fa-fw"></i> Liste des Etudiants</a>
+                             </li>
                                 </li>
                             </ul>
                     
                         </li>
-                        <li>
-                            <a href="AfficheEnseignant"><i class="fa fa-user fa-fw"></i> Enseignants</a>
-                        </li>
-                        <li>
-                            <a href="AfficheEtudiant"><i class="fa fa-users fa-fw"></i> Etudiants</a>
-                        </li>
+                      
+                       
                         <li>
                             <a href="tables.html"><i class="fa fa-heart fa-fw"></i> Voeux</a>
                         </li>
@@ -328,10 +327,10 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> PFA/PFE<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="blank.html">PFA</a>
+                                    <a href="AffichePfa">PFA</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">PFE</a>
+                                    <a href="AffichePfe">PFE</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

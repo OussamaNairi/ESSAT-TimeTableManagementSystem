@@ -24,7 +24,7 @@
 
     <!-- SB Admin CSS - Include with every page -->
     <link href="css/sb-admin.css" rel="stylesheet">
- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> 
+
 
 </head>
 
@@ -55,32 +55,15 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover"  id="dataTables-example" style="width:100%" >
+                                <table class="table table-striped table-bordered table-hover"  id="dataTables-example"  >
                                     <thead>
                                         <tr>
-                                           <th>Image</th>
+                                           <th>ID</th>
                                             <th>Nom</th>
                                             <th>Prenom</th>
                                             <th>Email</th>
-                                            <th>Adresse</th>
-                                             <th>Tel</th>
-                                            <th>Date de Naissance</th>
-                                            <th>Lieu de Naissance</th>
-                                            <th>Type Identificateur</th>
-                                            <th>Identificateur</th>
-                                            <th>Sexe</th>
-                                            <th>Nationalite</th>
-                                            <th>CNSS</th>
-                                            <th>CNRPS</th>
-                                            <th>Date Entree</th>
-                                            <th>Observation</th>
-                                            <th >Situation</th>
-                                            <th>Nombre Enfants</th>
-                                            <th >Diplome</th>
-                                             <th>RIB IBAN</th>
-                                               <th >Poste</th>
-                                             <th>Etablissement d'origine</th>
-                                              <th>Actions</th>
+                                            <th>Tel</th>
+                                           <th>Actions</th>
                    
 
                         
@@ -91,28 +74,12 @@
                                         <c:forEach var="en" items="${liste}" >
 
 <tr>
-<td>  ${en.image}</td>
+<td>  ${en.id}</td>
 <td> ${en.nom}</td>
-<td>   ${en.prenom}</td>
+<td>  ${en.prenom}</td>
 <td>  ${en.mail}</td>
-<td>   ${en.adresse}</td>
 <td>   ${en.tel}</td>
-<td>   ${en.dateDeNaissance}</td>
-<td>  ${en.lieuDeNaissance}</td>
-<td>  ${en.identificateur}</td>
-<td>  ${en.numeroIdentificateur}</td>
-<td>   ${en.sexe}</td>
-<td>   ${en.nationalite}</td>
-<td>  ${en.cnss}</td>
-<td>  ${en.cnrps}</td>
-<td>  ${en.dateEntree}</td>
-<td>   ${en.observation}</td>
-<td>   ${en.situationM}</td>
-<td>  ${en.nombreEnfants}</td>
-<td>  ${en.diplome}</td>
-<td>  ${en.ribIban}</td>
-<td>  ${en.poste}</td>
-<td>  ${en.etablissementOrigine}</td>
+
 
 
 <td><a href="ModifierEnseignant?id=${en.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteEnseignant?id=${en.id}"><span class="fa fa-trash-o"></span></a></td>
