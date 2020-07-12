@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import tn.essatin.model.Enseignant;
 import tn.essatin.model.Pfe;
 import tn.essatin.singleton.SingletonConnection;
 
@@ -22,6 +22,8 @@ public class PfeDaoImp implements IPfeDao{
 			ResultSet res=pre.executeQuery();
 			while(res.next()) {
 				Pfe p=new Pfe();
+				IEnseignantDao dao=new EnseignantDaoImp();
+				IDepartementDao dao1=new DepartementDaoImp();
 				p.setId(res.getInt("ID_Pfe"));
 				p.setTitre(res.getString("titre"));
 				p.setDescription(res.getString("description"));
@@ -31,6 +33,8 @@ public class PfeDaoImp implements IPfeDao{
 				p.setDateFin(res.getString("dateFin"));
 				p.setProjetExterne(res.getBoolean("projetExterne"));
 				p.setNomSociete(res.getString("nomSociete"));
+				p.setIdenseignant(dao.getEnseignant(res.getInt("ID_enseignant")));
+				p.setIdepartement(dao1.getDepartement(res.getInt("ID_Departement")));
 				liste.add(p);
 			}
 		} catch (SQLException e) {

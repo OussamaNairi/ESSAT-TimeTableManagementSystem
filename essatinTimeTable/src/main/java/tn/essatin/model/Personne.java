@@ -127,6 +127,11 @@ public abstract class Personne implements Serializable{
 	public void setLieuDeNaissance(String lieuDeNaissance) {
 		this.lieuDeNaissance = lieuDeNaissance;
 	}
+
+	@Override
+	public String toString() {
+		return  prenom+" "+nom;
+	}
 	
 
 }

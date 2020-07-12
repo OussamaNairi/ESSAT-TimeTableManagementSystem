@@ -46,6 +46,10 @@ public class Departement {
 	public void setChefDepartement(String chefDepartement) {
 		this.chefDepartement = chefDepartement;
 	}
+	@Override
+	public String toString() {
+		return  nom ;
+	}
 	
 
 }

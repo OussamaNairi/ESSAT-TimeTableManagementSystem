@@ -9,8 +9,7 @@ public class Enseignant extends Personne{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	private int id;
+
 	private String cnss;
 	private String cnrps;
 	private String dateEntree;
@@ -72,13 +71,6 @@ public class Enseignant extends Personne{
 	}
 
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getCnss() {
 		return cnss;

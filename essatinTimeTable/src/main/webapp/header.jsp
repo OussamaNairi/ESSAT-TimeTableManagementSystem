@@ -287,51 +287,30 @@
                         <li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> TimeTable</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Statistique<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Etudiants</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Enseignants</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                       
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Architecture Universite<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
+                              <li>
+                                    <a href="AfficheDepartement">Departement</a>
+                                </li>
                                 <li>
                                     <a href="AfficheSalle">Salle</a>
                                 </li>
-                                <li>
-                                    <a href="AfficheEtage">Etage</a>
-                                </li>
-                                <li>
-                                    <a href="AfficheBloc">Bloc</a>
-                                   
-                                </li>
-                                <li>
-                                    <a href="AfficheBatiment">Batiment</a>
-                                   
-                                </li>
-                                <li>
-                                    <a href="AfficheFaculte">Faculte</a>
-                                   
-                                </li>
+                              
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> PFA/PFE<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
+                             <li>
+                                    <a href="AffichePfe">PFE</a>
+                                </li>
                                 <li>
                                     <a href="AffichePfa">PFA</a>
                                 </li>
-                                <li>
-                                    <a href="AffichePfe">PFE</a>
-                                </li>
+                               
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

@@ -1,6 +1,6 @@
-<%@page import="tn.essatin.dao.IPfeDao"%>
-<%@page import="tn.essatin.dao.PfeDaoImp"%>
-<%@page import="tn.essatin.model.Pfe"%>
+<%@page import="tn.essatin.dao.IDepartementDao"%>
+<%@page import="tn.essatin.dao.DepartementDaoImp"%>
+<%@page import="tn.essatin.model.Departement"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PFE</title>
+    <title>Departements</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,14 +34,14 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">PFE</h1>
+                    <h1 class="page-header">Departements</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
              <div class="row">
                 <div class="col-lg-12">
                    <ol class="breadcrumb">
-                   <li><a href="AjouterPfeInter"><i class="fa fa-plus"></i>Ajouter</a></li>
+                   <li><a href="ajouterDepartement.jsp"><i class="fa fa-plus"></i>Ajouter</a></li>
                    </ol>
                         </div>
                         </div>
@@ -50,7 +50,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            Liste des PFE
+                            Liste des Departements
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -58,16 +58,10 @@
                                 <table class="table table-striped table-bordered table-hover"  id="dataTables-example"  >
                                     <thead>
                                         <tr>
-                                           <th>Titre</th>
-                                            <th>Description</th>
-                                            <th>Mots Cle</th>
-                                            <th>Technologie</th>
-                                            <th>Date Debut</th>
-                                             <th>Date Fin</th>
-                                             <th>Projet Externe</th>
-                                             <th>Nom Societe</th>
-                                             <th>Enseignant</th>
-                                             <th>Departement</th>
+                                           
+                                            <th>Nom</th>
+                                             <th>Description</th>
+                                            <th>Chef Departement</th>
                                            <th>Actions</th>
                    
 
@@ -76,22 +70,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <c:forEach var="p" items="${liste}" >
+                                        <c:forEach var="d" items="${liste}" >
 
 <tr>
-<td>  ${p.titre}</td>
-<td> ${p.description}</td>
-<td>  ${p.motCle}</td>
-<td>  ${p.technologie}</td>
-<td>   ${p.dateDebut}</td>
-<td>   ${p.dateFin}</td>
-<td>   ${p.projetExterne}</td>
-<td>   ${p.nomSociete}</td>
-<td>   ${p.idenseignant}</td>
-<td>   ${p.idepartement}</td>
+<td> ${d.nom}</td>
+<td>  ${d.description}</td>
+<td>  ${d.chefDepartement}</td>
 
-
-<td><a href="ModifierEnseignant?id=${p.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteEnseignant?id=${p.id}"><span class="fa fa-trash-o"></span></a></td>
+<td><a href="ModifierDepartement?id=${d.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteDepartement?id=${d.id}"><span class="fa fa-trash-o"></span></a></td>
 
 </tr>
 </c:forEach>
