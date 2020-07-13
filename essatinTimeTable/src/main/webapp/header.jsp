@@ -282,10 +282,10 @@
                       
                        
                         <li>
-                            <a href="tables.html"><i class="fa fa-heart fa-fw"></i> Voeux</a>
+                            <a href="voeux.jsp"><i class="fa fa-heart fa-fw"></i> Voeux</a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> TimeTable</a>
+                            <a href="table.jsp"><i class="fa fa-table fa-fw"></i> TimeTable</a>
                         </li>
                        
                         <li>

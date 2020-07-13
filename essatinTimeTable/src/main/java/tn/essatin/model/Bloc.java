@@ -41,5 +41,9 @@ public class Bloc {
 	public void setBat(Batiment bat) {
 		this.bat = bat;
 	}
-
+	@Override
+	public String toString() {
+		return nom ;
+	}
+	
 }

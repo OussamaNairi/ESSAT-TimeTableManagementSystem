@@ -41,6 +41,11 @@ public class Batiment {
 	public void setFac(Faculte fac) {
 		this.fac = fac;
 	}
+
+	@Override
+	public String toString() {
+		return nom ;
+	}
 	
 
 }

@@ -41,6 +41,11 @@ public class Etage {
 	public void setBloc(Bloc bloc) {
 		this.bloc = bloc;
 	}
+
+	@Override
+	public String toString() {
+		return  nom ;
+	}
 	
 
 }

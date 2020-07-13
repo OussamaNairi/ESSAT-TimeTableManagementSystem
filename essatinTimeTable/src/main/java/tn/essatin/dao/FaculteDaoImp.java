@@ -23,9 +23,10 @@ public class FaculteDaoImp implements IFaculteDao{
 			ResultSet res=pre.executeQuery();
 			while(res.next()) {
 				Faculte n=new Faculte();
-				n.setId(res.getInt("ID"));
-				n.setNom(res.getString("libelle"));
-				
+				n.setId(res.getInt("ID_Faculte"));
+				n.setNom(res.getString("nom"));
+				n.setNom(res.getString("adresse"));
+				n.setNombreEffectif(res.getInt("nombreEffectif"));
 				liste.add(n);
 			}
 		} catch (SQLException e) {
@@ -41,13 +42,15 @@ public class FaculteDaoImp implements IFaculteDao{
 		Connection cnx=SingletonConnection.getConnection();
 		Faculte n=null;
 		try {
-			PreparedStatement pre=cnx.prepareStatement("select * from Faculte where ID=?");
+			PreparedStatement pre=cnx.prepareStatement("select * from Faculte where ID_Faculte=?");
 			pre.setInt(1,id);
 			ResultSet res=pre.executeQuery();
 			if(res.next()) {
 				 n=new Faculte();
-				n.setId(res.getInt("ID"));
-				n.setNom(res.getString("libelle"));
+				n.setId(res.getInt("ID_Faculte"));
+				n.setNom(res.getString("nom"));
+				n.setNom(res.getString("adresse"));
+				n.setNombreEffectif(res.getInt("nombreEffectif"));
 		
 			}
 		} catch (SQLException e) {

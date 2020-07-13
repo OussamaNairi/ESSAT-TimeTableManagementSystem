@@ -50,5 +50,9 @@ public class Faculte {
 		this.nombreEffectif = nombreEffectif;
 	}
 	
-
+	@Override
+	public String toString() {
+		return nom ;
+	}
+	
 }
