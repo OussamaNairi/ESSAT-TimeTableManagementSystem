@@ -47,7 +47,7 @@
                 <div class="col-lg-12">
                    <div class="panel panel-primary">
                    <div class="panel-heading">
-                   Modifier Etudiant
+                   Détails Etudiant
                         </div>
                         
                         <div class="panel-body">
@@ -121,12 +121,7 @@
     <input type="text" class="form-control" name="cnss" value="${et.description}" readonly="readonly">
   </div>
     <input type="hidden" class="form-control" name="id"   value="${et.id}">
-                        <div class="panel-footer">
                         
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-save">&nbsp;</i>Enregistrer</button>
-                            <button type="reset" class="btn btn-danger"><i class="fa fa-arrow-left">&nbsp;</i>Annuler</button>
-                           
-                        </div>
                        </form>
                         </div>
                         

@@ -58,6 +58,7 @@
                                 <table class="table table-striped table-bordered table-hover"  id="dataTables-example"  >
                                     <thead>
                                         <tr>
+                                             <th>ID</th>
                                              <th>Nom</th>
                                             <th>Prenom</th>
                                             <th>Email</th>
@@ -70,13 +71,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <c:forEach var="en" items="${liste}" >
+                                        <c:forEach var="et" items="${liste}" >
 
 <tr>
-<td> ${en.nom}</td>
-<td>   ${en.prenom}</td>
-<td>  ${en.mail}</td>
-<td>   ${en.tel}</td>
+<td> ${et.id}</td>
+<td> ${et.nom}</td>
+<td>  ${et.prenom}</td>
+<td>  ${et.mail}</td>
+<td>   ${et.tel}</td>
 
 
 
