@@ -18,17 +18,20 @@ public class MatiereDaoImp implements IMatiereDao{
 		Connection cnx=SingletonConnection.getConnection();
 		List<Matiere> liste = new ArrayList<Matiere>();
 		TypeMatiereDaoImp dao=null;
+		SemestreDaoImp dao1=null;
 		try {
 			PreparedStatement pre=cnx.prepareStatement("select * from matiere");
 			ResultSet res=pre.executeQuery();
 			while(res.next()) {
 				Matiere m=new Matiere();
 				 dao =new TypeMatiereDaoImp();
+				 dao1 =new SemestreDaoImp();
 				m.setId(res.getInt("ID_Matiere"));
 				m.setNom(res.getString("nom"));
 				m.setCoefficient(res.getInt("coefficient"));
 				m.setVolumeHoraire(res.getInt("volumeHoraire"));
 				m.setTypeMatiere(dao.getTypeMatiere(res.getInt("ID_TypeMatiere")));
+				m.setSemestre(dao1.getSemestre(res.getInt("ID_Semestre")));
 				
 				liste.add(m);
 			}

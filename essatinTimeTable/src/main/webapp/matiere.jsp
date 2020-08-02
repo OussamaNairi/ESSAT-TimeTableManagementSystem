@@ -62,6 +62,7 @@
                                             <th>Coefficient</th>
                                             <th>Volume Horaire</th>
                                             <th>Type Matiere</th>
+                                             <th>Semestre</th>
                                            <th>Actions</th>
                    
 
@@ -77,6 +78,7 @@
 <td> ${m.coefficient}</td>
 <td>  ${m.volumeHoraire}</td>
 <td>  ${m.typeMatiere}</td>
+<td>  ${m.semestre}</td>
 
 
 
