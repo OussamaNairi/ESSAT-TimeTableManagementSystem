@@ -1,6 +1,6 @@
-<%@page import="tn.essatin.dao.IMatiereDao"%>
-<%@page import="tn.essatin.dao.MatiereDaoImp"%>
-<%@page import="tn.essatin.model.Matiere"%>
+<%@page import="tn.essatin.dao.IPfaDao"%>
+<%@page import="tn.essatin.dao.PfaDaoImp"%>
+<%@page import="tn.essatin.model.Pfa"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Matieres</title>
+    <title>PFE</title>
 
     <!-- Core CSS - Include with every page -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,14 +34,14 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Matieres</h1>
+                    <h1 class="page-header">PFA</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
              <div class="row">
                 <div class="col-lg-12">
                    <ol class="breadcrumb">
-                   <li><a href="AjouterEnseignantInter"><i class="fa fa-plus"></i>Ajouter</a></li>
+                   <li><a href="AjouterPfeInter"><i class="fa fa-plus"></i>Ajouter</a></li>
                    </ol>
                         </div>
                         </div>
@@ -50,7 +50,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            Liste des matieres
+                            Liste des PFA
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -58,12 +58,12 @@
                                 <table class="table table-striped table-bordered table-hover"  id="dataTables-example"  >
                                     <thead>
                                         <tr>
-                                            <th>Nom</th>
-                                            <th>Coefficient</th>
-                                            <th>Volume Horaire</th>
-                                            <th>Type Matiere</th>
-                                             <th>Niveau</th>
-                                             <th>Semestre</th>
+                                           <th>Titre</th>
+                                            <th>Description</th>
+                                            <th>Mots Cle</th>
+                                            <th>Technologie</th>
+                                            <th>Enseignant</th>
+                                             <th>Departement</th>
                                            <th>Actions</th>
                    
 
@@ -72,19 +72,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <c:forEach var="m" items="${liste}" >
+                                        <c:forEach var="p" items="${liste}" >
 
 <tr>
-<td>  ${m.nom}</td>
-<td> ${m.coefficient}</td>
-<td>  ${m.volumeHoraire}</td>
-<td>  ${m.typeMatiere}</td>
-<td>  ${m.niveau}</td>
-<td>  ${m.semestre}</td>
+<td>  ${p.titre}</td>
+<td> ${p.description}</td>
+<td>  ${p.motCle}</td>
+<td>  ${p.technologie}</td>
+<td>   ${p.idenseignant}</td>
+<td>   ${p.idepartement}</td>
 
 
-
-<td><a href="ModifierMatiere?id=${m.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteMatiere?id=${m.id}"><span class="fa fa-trash-o"></span></a></td>
+<td><a href="ModifierPfa?id=${p.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeletePfa?id=${p.id}"><span class="fa fa-trash-o"></span></a></td>
 
 </tr>
 </c:forEach>

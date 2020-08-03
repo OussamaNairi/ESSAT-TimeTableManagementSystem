@@ -91,7 +91,7 @@
 <td>   ${p.idepartement}</td>
 
 
-<td><a href="ModifierEnseignant?id=${p.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeleteEnseignant?id=${p.id}"><span class="fa fa-trash-o"></span></a></td>
+<td><a href="ModifierPfe?id=${p.id}"><span class="fa fa-edit"></span></a>&nbsp;|&nbsp; <a href="DeletePfe?id=${p.id}"><span class="fa fa-trash-o"></span></a></td>
 
 </tr>
 </c:forEach>

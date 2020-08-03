@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tn.essatin.model.Matiere;
-import tn.essatin.model.Nationalite;
 import tn.essatin.singleton.SingletonConnection;
 
 public class MatiereDaoImp implements IMatiereDao{
@@ -19,6 +18,7 @@ public class MatiereDaoImp implements IMatiereDao{
 		List<Matiere> liste = new ArrayList<Matiere>();
 		TypeMatiereDaoImp dao=null;
 		SemestreDaoImp dao1=null;
+		NiveauDaoImp dao2=null;
 		try {
 			PreparedStatement pre=cnx.prepareStatement("select * from matiere");
 			ResultSet res=pre.executeQuery();
@@ -26,11 +26,13 @@ public class MatiereDaoImp implements IMatiereDao{
 				Matiere m=new Matiere();
 				 dao =new TypeMatiereDaoImp();
 				 dao1 =new SemestreDaoImp();
+				 dao2 =new NiveauDaoImp();
 				m.setId(res.getInt("ID_Matiere"));
 				m.setNom(res.getString("nom"));
 				m.setCoefficient(res.getInt("coefficient"));
 				m.setVolumeHoraire(res.getInt("volumeHoraire"));
 				m.setTypeMatiere(dao.getTypeMatiere(res.getInt("ID_TypeMatiere")));
+				m.setNiveau(dao2.getNiveau(res.getInt("ID_Niveau")));
 				m.setSemestre(dao1.getSemestre(res.getInt("ID_Semestre")));
 				
 				liste.add(m);

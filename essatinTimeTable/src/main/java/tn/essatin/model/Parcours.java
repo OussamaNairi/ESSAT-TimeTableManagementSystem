@@ -46,6 +46,10 @@ public class Parcours {
 	public void setSpecialite(Specialite specialite) {
 		this.specialite = specialite;
 	}
+	@Override
+	public String toString() {
+		return designation ;
+	}
 	
 
 }

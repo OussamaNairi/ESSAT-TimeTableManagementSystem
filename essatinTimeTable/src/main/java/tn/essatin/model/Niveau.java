@@ -46,5 +46,11 @@ public class Niveau {
 	public void setParcours(Parcours parcours) {
 		this.parcours = parcours;
 	}
+	@Override
+	public String toString() {
+		return  parcours +" "+ designation   ;
+	}
+	
+	
 
 }
