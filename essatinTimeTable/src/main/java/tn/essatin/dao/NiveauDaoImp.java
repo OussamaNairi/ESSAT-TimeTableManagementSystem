@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import tn.essatin.model.Niveau;
@@ -13,8 +14,27 @@ public class NiveauDaoImp implements INiveauDao{
 
 	@Override
 	public List<Niveau> getAllNiveaus() {
-		// TODO Auto-generated method stub
-		return null;
+		Connection cnx=SingletonConnection.getConnection();
+		List<Niveau> liste = new ArrayList<Niveau>();
+		ParcoursDaoImp dao=null;
+		try {
+			PreparedStatement pre=cnx.prepareStatement("select * from niveau");
+			ResultSet res=pre.executeQuery();
+			while(res.next()) {
+				Niveau n=new Niveau();
+				 dao =new ParcoursDaoImp();
+				n.setId(res.getInt("ID_Niveau"));
+				n.setDesignation(res.getString("Designation"));
+				n.setDescription(res.getString("Description"));
+				n.setParcours(dao.getParcours(res.getInt("ID_Parcours")));
+				
+				liste.add(n);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return liste;
 	}
 
 	@Override

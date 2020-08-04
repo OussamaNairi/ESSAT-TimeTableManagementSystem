@@ -52,7 +52,24 @@ public class MatiereDaoImp implements IMatiereDao{
 
 	@Override
 	public void addMatiere(Matiere d) {
-		// TODO Auto-generated method stub
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("insert into matiere values(null,?,?,?,?,?,?)");
+			pre.setString(1,d.getNom());
+			pre.setInt(2,d.getCoefficient());
+			pre.setInt(3,d.getVolumeHoraire());
+			pre.setInt(4,d.getTypeMatiere().getId());
+			pre.setInt(5,d.getNiveau().getId());
+			pre.setInt(6,d.getSemestre().getId());
+			pre.executeUpdate();
+			
+			
+			
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		
 	}
 

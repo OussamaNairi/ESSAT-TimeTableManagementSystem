@@ -24,7 +24,7 @@ public class PfaDaoImp implements IPfaDao{
 				Pfa p=new Pfa();
 				IEnseignantDao dao=new EnseignantDaoImp();
 				IDepartementDao dao1=new DepartementDaoImp();
-				p.setId(res.getInt("ID_Pfe"));
+				p.setId(res.getInt("ID_Pfa"));
 				p.setTitre(res.getString("titre"));
 				p.setDescription(res.getString("description"));
 				p.setMotCle(res.getString("motCle"));

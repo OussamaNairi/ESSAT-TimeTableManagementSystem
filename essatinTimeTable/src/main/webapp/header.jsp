@@ -273,6 +273,9 @@
                                 <li>
                                    <a href="AfficheEnseignant"><i class="fa fa-user fa-fw"></i>Liste des Enseignants</a>
                                     <li>
+                            <a href="AfficheAffectation"><i class="fa fa-users fa-fw"></i> Liste des Enseignant par Matiere</a>
+                             </li>
+                                    <li>
                             <a href="AfficheEtudiant"><i class="fa fa-users fa-fw"></i> Liste des Etudiants</a>
                              </li>
                                 </li>
