@@ -75,5 +75,9 @@ public class Matiere {
 	public void setSemestre(Semestre semestre) {
 		this.semestre = semestre;
 	}
+	@Override
+	public String toString() {
+		return nom ;
+	}
 	
 }

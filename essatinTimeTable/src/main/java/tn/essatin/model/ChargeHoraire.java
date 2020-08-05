@@ -55,6 +55,10 @@ public class ChargeHoraire {
 	public void setMatiere(Matiere matiere) {
 		this.matiere = matiere;
 	}
+	@Override
+	public String toString() {
+		return matiere +" "+nom;
+	}
 	
 
 }
