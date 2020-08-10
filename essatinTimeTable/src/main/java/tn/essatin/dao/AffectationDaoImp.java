@@ -49,7 +49,18 @@ public class AffectationDaoImp implements IAffectationDao{
 
 	@Override
 	public void addAffectation(Affectation a) {
-		// TODO Auto-generated method stub
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("insert into enseignantmatiereaffectation values(null,?,?)");
+			pre.setInt(1,a.getEnseignant().getId());
+			pre.setInt(2,a.getChargeHoraire().getId());
+			pre.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

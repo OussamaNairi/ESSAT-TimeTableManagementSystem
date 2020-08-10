@@ -41,7 +41,7 @@
              <div class="row">
                 <div class="col-lg-12">
                    <ol class="breadcrumb">
-                   <li><a href="AjouterEtudiantInter"><i class="fa fa-plus"></i>Ajouter</a></li>
+                   <li><a href="AjouterAffectationInter"><i class="fa fa-plus"></i>Ajouter</a></li>
                    </ol>
                         </div>
                         </div>
