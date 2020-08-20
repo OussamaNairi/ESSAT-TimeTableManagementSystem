@@ -51,7 +51,27 @@ public class PfeDaoImp implements IPfeDao{
 
 	@Override
 	public void addPfe(Pfe p) {
-		// TODO Auto-generated method stub
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("insert into pfe values(null,?,?,?,?,?,?,?,?,?,?)");
+			pre.setString(1,p.getTitre());
+			pre.setString(2,p.getDescription());
+			pre.setString(3,p.getMotCle());
+			pre.setString(4,p.getTechnologie());
+			pre.setString(5,p.getDateDebut());
+			pre.setString(6,p.getDateFin());
+			pre.setBoolean(7,p.getProjetExterne());
+			pre.setString(8,p.getNomSociete());
+			pre.setInt(9,p.getIdenseignant().getId());
+			pre.setInt(10,p.getIdepartement().getId());
+			pre.executeUpdate();
+
+			
+			
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 	}
 
@@ -63,7 +83,17 @@ public class PfeDaoImp implements IPfeDao{
 
 	@Override
 	public void deletePfe(int id) {
-		// TODO Auto-generated method stub
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("delete from pfe where ID_Pfe=?");
+			pre.setInt(1,id);
+			pre.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

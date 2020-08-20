@@ -48,7 +48,23 @@ public class PfaDaoImp implements IPfaDao{
 
 	@Override
 	public void addPfa(Pfa p) {
-		// TODO Auto-generated method stub
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("insert into pfa values(null,?,?,?,?,?,?)");
+			pre.setString(1,p.getTitre());
+			pre.setString(2,p.getDescription());
+			pre.setString(3,p.getMotCle());
+			pre.setString(4,p.getTechnologie());
+			pre.setInt(9,p.getIdenseignant().getId());
+			pre.setInt(10,p.getIdepartement().getId());
+			pre.executeUpdate();
+
+			
+			
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 	}
 
@@ -60,7 +76,17 @@ public class PfaDaoImp implements IPfaDao{
 
 	@Override
 	public void deletePfa(int id) {
-		// TODO Auto-generated method stub
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("delete from pfa where ID_Pfa=?");
+			pre.setInt(1,id);
+			pre.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

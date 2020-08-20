@@ -30,7 +30,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Ajouter PFE</h1>
+                    <h1 class="page-header">Ajouter PFA</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -38,11 +38,11 @@
                 <div class="col-lg-12">
                    <div class="panel panel-primary">
                    <div class="panel-heading">
-                   Nouveau PFE
+                   Nouveau PFA
                         </div>
                         
                         <div class="panel-body">
-                        <form action="AjouterPfe" method="post">
+                        <form action="AjouterPfa" method="post">
   <div class="form-group">
     <label >Titre</label>
     <input type="text" class="form-control" name="titre"  placeholder="Titre">
@@ -59,22 +59,6 @@
   <div class="form-group">
     <label>Technologie</label>
     <input type="text" class="form-control" name="technologie" placeholder="Technologie">
-  </div>
-  <div class="form-group">
-    <label>Date Debut</label>
-    <input type="text" class="form-control" name="dateDebut" placeholder="Date Debut">
-  </div>
-  <div class="form-group">
-    <label>Date Fin</label>
-    <input type="text" class="form-control" name="dateFin" placeholder="Date Fin">
-  </div>
-  <div class="form-group">
-    <label>Projet Externe</label>
-    <input type="text" class="form-control" name="projetExterne" placeholder="Projet Externe">
-  </div>
-  <div class="form-group">
-    <label>Nom Societe</label>
-    <input type="text" class="form-control" name="sexe" placeholder="Nom Societe">
   </div>
   <div class="form-group">
     <label >Enseignant</label>
