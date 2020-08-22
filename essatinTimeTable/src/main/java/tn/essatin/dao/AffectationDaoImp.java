@@ -43,8 +43,30 @@ public class AffectationDaoImp implements IAffectationDao{
 
 	@Override
 	public Affectation getAffectation(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Connection cnx=SingletonConnection.getConnection();
+		
+		ChargeHoraireDaoImp dao1=null;
+		EnseignantDaoImp dao2=null;
+		Affectation a=null;
+		try {
+			PreparedStatement pre=cnx.prepareStatement("select * from enseignantmatiereaffectation where ID_enseignantMatiereAffectation=?");
+			pre.setInt(1,id);
+			ResultSet res=pre.executeQuery();
+			if(res.next()) {
+			 a=new Affectation();
+				
+				 dao1 =new ChargeHoraireDaoImp();
+				 dao2 =new EnseignantDaoImp();
+				a.setId(res.getInt("ID_enseignantMatiereAffectation"));
+				a.setEnseignant(dao2.getEnseignant(res.getInt("ID_Enseignant")));
+				a.setChargeHoraire(dao1.getChargeHoraire(res.getInt("ID_ChargeHoraire")));
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return a;
 	}
 
 	@Override
@@ -66,13 +88,36 @@ public class AffectationDaoImp implements IAffectationDao{
 
 	@Override
 	public void updateAffectation(Affectation a) {
-		// TODO Auto-generated method stub
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("update enseignantmatiereaffectation set ID_Enseignant=? , ID_ChargeHoraire=? where ID_enseignantMatiereAffectation=?");
+			pre.setInt(1,a.getEnseignant().getId());
+			pre.setInt(2,a.getChargeHoraire().getId());
+			pre.setInt(3,a.getId());
+			pre.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
 	@Override
 	public void deleteAffectation(int id) {
-		// TODO Auto-generated method stub
+		Connection cnx=SingletonConnection.getConnection();
+		try {
+			PreparedStatement pre=cnx.prepareStatement("delete from enseignantmatiereaffectation where ID_enseignantMatiereAffectation=?");
+			pre.setInt(1,id);
+			pre.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 	}
 

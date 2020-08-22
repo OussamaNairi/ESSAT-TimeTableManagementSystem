@@ -55,8 +55,8 @@ public class PfaDaoImp implements IPfaDao{
 			pre.setString(2,p.getDescription());
 			pre.setString(3,p.getMotCle());
 			pre.setString(4,p.getTechnologie());
-			pre.setInt(9,p.getIdenseignant().getId());
-			pre.setInt(10,p.getIdepartement().getId());
+			pre.setInt(5,p.getIdenseignant().getId());
+			pre.setInt(6,p.getIdepartement().getId());
 			pre.executeUpdate();
 
 			

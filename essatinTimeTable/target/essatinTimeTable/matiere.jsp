@@ -41,7 +41,7 @@
              <div class="row">
                 <div class="col-lg-12">
                    <ol class="breadcrumb">
-                   <li><a href="AjouterEnseignantInter"><i class="fa fa-plus"></i>Ajouter</a></li>
+                   <li><a href="AjouterMatiereInter"><i class="fa fa-plus"></i>Ajouter</a></li>
                    </ol>
                         </div>
                         </div>
@@ -62,6 +62,8 @@
                                             <th>Coefficient</th>
                                             <th>Volume Horaire</th>
                                             <th>Type Matiere</th>
+                                             <th>Niveau</th>
+                                             <th>Semestre</th>
                                            <th>Actions</th>
                    
 
@@ -77,6 +79,8 @@
 <td> ${m.coefficient}</td>
 <td>  ${m.volumeHoraire}</td>
 <td>  ${m.typeMatiere}</td>
+<td>  ${m.niveau}</td>
+<td>  ${m.semestre}</td>
 
 
 

@@ -1,6 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@page import="tn.essatin.model.Nationalite"%>
-<%@page import="tn.essatin.model.Identificateur"%>
+
 
 
 <!DOCTYPE html>
